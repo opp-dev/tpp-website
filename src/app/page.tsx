@@ -1,63 +1,131 @@
 import Image from "next/image";
+import { client } from '@/sanity/client';
+import Link from 'next/link';
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            The Product Papers
-          </li>
-        </ol>
+interface Author {
+  name: string;
+}
 
+interface Category {
+  title: string;
+}
+
+interface MainImage {
+  asset: {
+    url: string;
+  };
+  alt?: string; // Alt text is optional
+}
+
+interface Post {
+  _id: string;
+  title: string;
+  slug: string;
+  publishedAt: string;
+  author: Author;
+  mainImage?: MainImage; // Main image is optional
+  categories: Category[];
+}
+
+const POSTS_QUERY = `
+  *[_type == "post"] | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    publishedAt,
+    
+    // Follow the 'author' reference to get the author's name
+    author->{
+      name
+    },
+    
+    // Select the mainImage fields, and follow the 'asset' reference for the URL
+    mainImage {
+      asset->{
+        url
+      },
+      alt
+    },
+    
+    // For the array of 'categories', follow each reference to get the title
+    categories[]->{
+      title
+    }
+  }
+`;
+export default async function HomePage() {
+  
+  // Fetch the strongly-typed data from Sanity
+  // The 'client' should be imported from your configured 'src/sanity/client.ts'
+  const posts: Post[] = await client.fetch(POSTS_QUERY, {}, { 
+    // Recommended: Use cache options for performance on Vercel
+    next: { tags: ['post'], revalidate: 60 }
+  });
+
+  if (!posts || posts.length === 0) {
+    return (
+      <main className="container mx-auto p-8 max-w-4xl">
+        <h1 className="text-4xl font-extrabold text-gray-900">The Product Papers</h1>
+        <p className="mt-4 text-xl text-gray-500">
+            Welcome! It looks like there are no published posts yet.
+        </p>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Copyright Suryanshu Rai 2025
-        </a>
-        <p> Designed and coded with love in Altona </p>
+    );
+  }
+
+  return (
+    <div className="font-sans min-h-screen">
+      <main className="container mx-auto p-8 max-w-4xl pt-10">
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-10">Latest Articles from The Product Papers</h1>
+
+        <section className="space-y-10">
+          {posts.map((post) => (
+            <article key={post._id} className="border-b border-gray-200 pb-8">
+              
+              {/* Image (Optional) */}
+              {post.mainImage?.asset?.url && (
+                <img 
+                  src={post.mainImage.asset.url} 
+                  alt={post.mainImage.alt || post.title} 
+                  className="w-full h-64 object-cover rounded-lg mb-4 shadow-md"
+                />
+              )}
+
+              {/* Title and Link */}
+              <Link href={`/blog/${post.slug}`} passHref>
+                <h2 className="text-3xl font-bold text-indigo-700 hover:text-indigo-900 transition duration-150 cursor-pointer">
+                  {post.title}
+                </h2>
+              </Link>
+
+              {/* Metadata */}
+              <p className="text-sm text-gray-500 mt-2">
+                By **{post.author.name}** on {new Date(post.publishedAt).toISOString().split('T')[0]}
+              </p>
+              
+              {/* Categories/Tags */}
+              {post.categories?.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {post.categories.map((c, index) => (
+                    <span key={index} className="text-xs font-medium bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
+                      {c.title}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {/* Read More Link */}
+              <Link href={`/blog/${post.slug}`} className="mt-4 inline-block text-base font-semibold text-teal-600 hover:text-teal-800 transition duration-150">
+                Continue reading &rarr;
+              </Link>
+            </article>
+          ))}
+        </section>
+      </main>
+
+      {/* Re-added your custom footer content */}
+      <footer className="mt-16 border-t border-gray-200 py-4 text-center text-sm text-gray-500">
+          <p>The Product Papers &copy; {new Date().getFullYear()} Suryanshu Rai. Designed and coded with love in Altona.</p>
       </footer>
     </div>
   );
