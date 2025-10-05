@@ -21,6 +21,7 @@ interface Post {
   _id: string;
   title: string;
   slug: string;
+  body: any;
   publishedAt: string;
   author: Author;
   mainImage?: MainImage; // Main image is optional
@@ -33,6 +34,7 @@ const POSTS_QUERY = `
     title,
     "slug": slug.current,
     publishedAt,
+    body,
     
     // Follow the 'author' reference to get the author's name
     author->{
@@ -102,6 +104,16 @@ export default async function HomePage() {
               <p className="text-sm text-gray-500 mt-2">
                 By **{post.author.name}** on {new Date(post.publishedAt).toISOString().split('T')[0]}
               </p>
+
+              <div className="mt-4 text-gray-700">
+  {/* Display the raw JSON string of the Portable Text for testing */}
+  <div className="mt-4 text-gray-700">
+  <p className="text-lg leading-relaxed">
+    {/* Access the first block -> first child -> text property */}
+    {post.body?.[0]?.children?.[0]?.text}
+  </p>
+</div>
+</div>
               
               {/* Categories/Tags */}
               {post.categories?.length > 0 && (
