@@ -18,6 +18,14 @@ export default function Header() {
           </li>
           <li>
             <Link 
+              href="/now" 
+              className="text-lg hover:underline hover:underline-offset-4 transition-all duration-200"
+            >
+              Now
+            </Link>
+          </li>
+          <li>
+            <Link 
               href="/about" 
               className="text-lg hover:underline hover:underline-offset-4 transition-all duration-200"
             >
