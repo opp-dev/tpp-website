@@ -22,8 +22,9 @@ const NOW_DETAIL_QUERY = `
   }
 `;
 
-export default async function NowDetailPage({ params }: { params: { slug: string } }) {
-  const entry: NowDetail | null = await client.fetch(NOW_DETAIL_QUERY, { slug: params.slug }, {
+export default async function NowDetailPage(props: { params: Promise<{ slug: string }> }) {
+  const { slug } = await props.params;
+  const entry: NowDetail | null = await client.fetch(NOW_DETAIL_QUERY, { slug }, {
     next: { tags: ["now"], revalidate: 60 },
   });
 
