@@ -78,7 +78,6 @@ export default async function HomePage() {
   return (
     <div className="font-sans min-h-screen">
       <main className="container mx-auto p-8 max-w-4xl pt-10">
-        
         {/* Introduction Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Welcome to The Product Papers</h2>
@@ -178,11 +177,6 @@ export default async function HomePage() {
           ))}
         </section>
       </main>
-
-      {/* Re-added your custom footer content */}
-      <footer className="mt-16 border-t border-gray-200 py-4 text-center text-sm text-gray-500">
-          <p>The Product Papers &copy; {new Date().getFullYear()} Suryanshu Rai. Designed and coded with love in Altona.</p>
-      </footer>
     </div>
   );
 }

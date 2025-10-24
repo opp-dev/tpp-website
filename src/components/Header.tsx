@@ -32,14 +32,6 @@ export default function Header() {
               About
             </Link>
           </li>
-          <li>
-            <Link 
-              href="/impressum" 
-              className="text-lg hover:underline hover:underline-offset-4 transition-all duration-200"
-            >
-              Impressum
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>
