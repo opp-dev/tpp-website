@@ -68,7 +68,7 @@ export default async function HomePage() {
     return (
       <main className="container mx-auto p-8 max-w-4xl">
         <h1 className="text-4xl font-extrabold text-gray-900">The Product Papers</h1>
-        <p className="mt-4 text-xl text-gray-500">
+        <p className="mt-4">
             Welcome! It looks like there are no published posts yet.
         </p>
       </main>
@@ -82,15 +82,15 @@ export default async function HomePage() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Welcome to The Product Papers</h2>
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg leading-relaxed text-gray-700 mb-4">
+            <p className="mb-4">
               Product development is the art and science of turning ideas into reality. It's where creativity meets 
               strategy, where user needs intersect with business goals, and where innovation transforms into impact.
             </p>
-            <p className="text-lg leading-relaxed text-gray-700 mb-4">
+            <p className="mb-4">
               Whether you're building digital products, physical goods, or services, the principles remain the same: 
               understand your users, validate your assumptions, iterate quickly, and always keep the bigger picture in mind.
             </p>
-            <p className="text-lg leading-relaxed text-gray-700">
+            <p>
               Here at The Product Papers, you'll find insights on product strategy, development methodologies, 
               user research, market analysis, and the stories behind successful products. Expect practical advice, 
               real-world case studies, and thoughtful analysis that you can apply to your own product journey.
@@ -102,11 +102,11 @@ export default async function HomePage() {
         <section className="mb-16 bg-gray-50 rounded-lg p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Let's Connect</h2>
           <div className="text-center">
-            <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            <p className="mb-6">
               Have questions about product development? Want to share your own insights? 
               I'd love to hear from you and discuss all things product.
             </p>
-            <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            <p className="mb-6">
               Whether you're a seasoned product manager, an aspiring entrepreneur, or someone curious about 
               the product development process, let's start a conversation.
             </p>
@@ -151,7 +151,7 @@ export default async function HomePage() {
               <div className="mt-4 text-gray-700">
   {/* Display the raw JSON string of the Portable Text for testing */}
   <div className="mt-4 text-gray-700">
-  <p className="text-lg leading-relaxed">
+  <p>
     {/* Access the first block -> first child -> text property */}
     {post.body?.[0]?.children?.[0]?.text}
   </p>

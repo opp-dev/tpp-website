@@ -32,7 +32,7 @@ export default async function NowDetailPage(props: { params: Promise<{ slug: str
     return (
       <main className="container mx-auto p-8 max-w-3xl">
         <h1 className="text-2xl font-semibold">Not found</h1>
-        <p className="text-gray-600 mt-2">We couldn’t find this now post.</p>
+        <p className="mt-2">We couldn't find this now post.</p>
       </main>
     );
   }

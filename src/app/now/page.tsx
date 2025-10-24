@@ -31,7 +31,7 @@ export default async function NowListPage() {
     <main className="container mx-auto p-8 max-w-3xl">
       <h1 className="text-4xl font-extrabold text-gray-900 mb-10">Now</h1>
       {(!items || items.length === 0) && (
-        <p className="text-gray-600">No updates yet. Check back soon!</p>
+        <p>No updates yet. Check back soon!</p>
       )}
 
       <section className="space-y-10">
@@ -59,7 +59,7 @@ export default async function NowListPage() {
                 {new Date(it.publishedAt).toISOString().split("T")[0]}
               </p>
 
-              <p className="mt-4 text-gray-700 leading-relaxed">{snippet}</p>
+              <p className="mt-4">{snippet}</p>
 
               <Link
                 href={`/now/${it.slug}`}
