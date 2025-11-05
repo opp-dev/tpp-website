@@ -67,7 +67,7 @@ export default async function HomePage() {
   if (!posts || posts.length === 0) {
     return (
       <main className="container mx-auto p-8 max-w-4xl">
-        <h1 className="text-4xl font-extrabold text-gray-900">The Product Papers</h1>
+        <h1 className="typography-h1 text-gray-900">The Product Papers</h1>
         <p className="mt-4">
             Welcome! It looks like there are no published posts yet.
         </p>
@@ -121,7 +121,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-10">Latest Articles from The Product Papers</h1>
+        <h1 className="typography-h1 text-gray-900 mb-10">Latest Articles from The Product Papers</h1>
 
         <section className="space-y-10">
           {posts.map((post) => (

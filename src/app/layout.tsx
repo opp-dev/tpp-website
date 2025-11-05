@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Crimson_Pro } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +8,12 @@ const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ["latin"],
   variable: "--font-roboto",
+});
+
+const crimsonPro = Crimson_Pro({
+  weight: ['400', '600'],
+  subsets: ["latin"],
+  variable: "--font-crimson-pro",
 });
 
 
@@ -29,7 +35,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
       </head>
       <body
-        className={`${roboto.variable} antialiased`}
+        className={`${roboto.variable} ${crimsonPro.variable} antialiased`}
       >
         <Header />
         {children}

@@ -8,6 +8,7 @@
   
   /* Font Families */
   --font-family-primary: var(--font-roboto), sans-serif;
+  --font-family-heading: var(--font-crimson-pro), serif;
   --font-family-mono: 'IBM Plex Mono', monospace;
   
   /* Font Sizes */
@@ -51,10 +52,11 @@
   --typography-display-letter-spacing: var(--letter-spacing-tight);
   
   /* H1 - Primary heading */
-  --typography-h1-size: var(--font-size-5xl);
-  --typography-h1-line-height: var(--line-height-none);
-  --typography-h1-weight: var(--font-weight-bold);
+  --typography-h1-size: 53px;
+  --typography-h1-line-height: var(--line-height-tight);
+  --typography-h1-weight: var(--font-weight-semibold);
   --typography-h1-letter-spacing: var(--letter-spacing-normal);
+  --typography-h1-family: var(--font-family-heading);
   
   /* H2 - Secondary heading */
   --typography-h2-size: var(--font-size-4xl);
@@ -109,6 +111,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-roboto);
+  --font-heading: var(--font-crimson-pro);
   --font-mono: 'IBM Plex Mono', monospace;
   
   /* Expose typography tokens to Tailwind */
@@ -149,6 +152,7 @@ p {
 }
 
 h1 {
+  font-family: var(--font-crimson-pro), serif !important;
   font-size: var(--typography-h1-size);
   font-weight: var(--typography-h1-weight);
   line-height: var(--typography-h1-line-height);
@@ -197,6 +201,7 @@ h5 {
 }
 
 .typography-h1 {
+  font-family: var(--font-crimson-pro), serif !important;
   font-size: var(--typography-h1-size);
   font-weight: var(--typography-h1-weight);
   line-height: var(--typography-h1-line-height);

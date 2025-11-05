@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="pt-6 pb-12 flex items-center justify-between px-8">
+    <header className="pt-6 pb-12 pl-8 pr-12 flex items-center justify-between">
       <div>
         <Image
           src="/tpplogo.png"

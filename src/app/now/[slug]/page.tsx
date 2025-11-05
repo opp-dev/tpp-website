@@ -31,7 +31,7 @@ export default async function NowDetailPage(props: { params: Promise<{ slug: str
   if (!entry) {
     return (
       <main className="container mx-auto p-8 max-w-3xl">
-        <h1 className="text-2xl font-semibold">Not found</h1>
+        <h1 className="typography-h1 text-gray-900">Not found</h1>
         <p className="mt-2">We couldn't find this now post.</p>
       </main>
     );
@@ -39,7 +39,7 @@ export default async function NowDetailPage(props: { params: Promise<{ slug: str
 
   return (
     <main className="container mx-auto p-8 max-w-3xl">
-      <h1 className="text-4xl font-extrabold text-gray-900 mb-2">{entry.title}</h1>
+      <h1 className="typography-h1 text-gray-900 mb-2">{entry.title}</h1>
       <p className="text-sm text-gray-500 mb-8">
         {new Date(entry.publishedAt).toISOString().split("T")[0]}
       </p>

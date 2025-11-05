@@ -1,7 +1,7 @@
 export default function DatenschutzerklaerungPage() {
   return (
     <main className="container mx-auto p-8 max-w-4xl">
-      <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Datenschutzerklärung</h1>
+      <h1 className="typography-h1 text-gray-900 mb-8">Datenschutzerklärung</h1>
       
       <div className="prose prose-lg max-w-none">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Datenschutz auf einen Blick</h2>
