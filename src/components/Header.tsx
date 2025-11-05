@@ -1,13 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="py-20 text-center">
-      <h1 className="text-[40px] font-bold mb-8">
-        The Product Papers
-      </h1>
+    <header className="pt-6 pb-12 flex items-center justify-between px-8">
+      <div>
+        <Image
+          src="/tpplogo.png"
+          alt="The Product Papers Logo"
+          width={80}
+          height={70}
+          priority
+        />
+      </div>
       <nav>
-        <ul className="flex justify-center space-x-8">
+        <ul className="flex space-x-8">
           <li>
             <Link 
               href="/" 
