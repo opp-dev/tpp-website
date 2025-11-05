@@ -8,10 +8,10 @@ export default function Footer() {
           <div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ marginBottom: '8px' }}>
-                <Link href="/impressum">Impressum</Link>
+                <Link href="/impressum" className="link-mono">Impressum</Link>
               </li>
               <li>
-                <Link href="/datenschutzerklaerung">Datenschutzerklärung</Link>
+                <Link href="/datenschutzerklaerung" className="link-mono">Datenschutzerklärung</Link>
               </li>
             </ul>
           </div>

@@ -3,12 +3,126 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Typography Design Tokens - Desktop */
+  
+  /* Font Families */
+  --font-family-primary: var(--font-roboto), sans-serif;
+  --font-family-mono: 'IBM Plex Mono', monospace;
+  
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 40px;
+  --font-size-4xl: 44px;
+  --font-size-5xl: 50px;
+  --font-size-6xl: 60px;
+  
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.5;
+  --line-height-loose: 1.75;
+  
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+  
+  /* Semantic Typography Tokens */
+  
+  /* Display - For large hero text */
+  --typography-display-size: var(--font-size-6xl);
+  --typography-display-line-height: var(--line-height-tight);
+  --typography-display-weight: var(--font-weight-bold);
+  --typography-display-letter-spacing: var(--letter-spacing-tight);
+  
+  /* H1 - Primary heading */
+  --typography-h1-size: var(--font-size-5xl);
+  --typography-h1-line-height: var(--line-height-none);
+  --typography-h1-weight: var(--font-weight-bold);
+  --typography-h1-letter-spacing: var(--letter-spacing-normal);
+  
+  /* H2 - Secondary heading */
+  --typography-h2-size: var(--font-size-4xl);
+  --typography-h2-line-height: 48px;
+  --typography-h2-weight: var(--font-weight-semibold);
+  --typography-h2-letter-spacing: var(--letter-spacing-normal);
+  
+  /* H3 - Tertiary heading */
+  --typography-h3-size: var(--font-size-2xl);
+  --typography-h3-line-height: var(--line-height-normal);
+  --typography-h3-weight: var(--font-weight-semibold);
+  --typography-h3-letter-spacing: var(--letter-spacing-normal);
+  
+  /* H4 - Quaternary heading */
+  --typography-h4-size: var(--font-size-xl);
+  --typography-h4-line-height: var(--line-height-normal);
+  --typography-h4-weight: var(--font-weight-semibold);
+  --typography-h4-letter-spacing: var(--letter-spacing-normal);
+  
+  /* H5 - Minor heading */
+  --typography-h5-size: var(--font-size-lg);
+  --typography-h5-line-height: var(--line-height-normal);
+  --typography-h5-weight: var(--font-weight-medium);
+  --typography-h5-letter-spacing: var(--letter-spacing-normal);
+  
+  /* Body - Standard text */
+  --typography-body-size: var(--font-size-lg);
+  --typography-body-line-height: 27px;
+  --typography-body-weight: var(--font-weight-normal);
+  --typography-body-letter-spacing: var(--letter-spacing-normal);
+  
+  /* Body Small - Smaller body text */
+  --typography-body-sm-size: var(--font-size-base);
+  --typography-body-sm-line-height: var(--line-height-relaxed);
+  --typography-body-sm-weight: var(--font-weight-normal);
+  --typography-body-sm-letter-spacing: var(--letter-spacing-normal);
+  
+  /* Caption - Small supporting text */
+  --typography-caption-size: var(--font-size-sm);
+  --typography-caption-line-height: var(--line-height-normal);
+  --typography-caption-weight: var(--font-weight-normal);
+  --typography-caption-letter-spacing: var(--letter-spacing-normal);
+  
+  /* Overline - Small uppercase labels */
+  --typography-overline-size: var(--font-size-xs);
+  --typography-overline-line-height: var(--line-height-normal);
+  --typography-overline-weight: var(--font-weight-semibold);
+  --typography-overline-letter-spacing: var(--letter-spacing-wide);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-roboto);
+  --font-mono: 'IBM Plex Mono', monospace;
+  
+  /* Expose typography tokens to Tailwind */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 40px;
+  --font-size-4xl: 44px;
+  --font-size-5xl: 50px;
+  --font-size-6xl: 60px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,57 +135,136 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-roboto), sans-serif;
-  font-size: 20px;
-  line-height: 27px;
-  font-weight: 400;
+  font-family: var(--font-family-primary);
+  font-size: var(--typography-body-size);
+  line-height: var(--typography-body-line-height);
+  font-weight: var(--typography-body-weight);
 }
-/* Base typography styles */
+/* Base typography styles using design tokens */
 p {
-  font-size: 20px;
-  line-height: 150%;
-  font-weight: 400;
+  font-size: var(--typography-body-size);
+  line-height: var(--typography-body-line-height);
+  font-weight: var(--typography-body-weight);
+  letter-spacing: var(--typography-body-letter-spacing);
 }
 
 h1 {
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 50px;
+  font-size: var(--typography-h1-size);
+  font-weight: var(--typography-h1-weight);
+  line-height: var(--typography-h1-line-height);
+  letter-spacing: var(--typography-h1-letter-spacing);
   margin-bottom: 24px;
 }
 
 h2 {
-  font-size: 44px;
-  font-weight: 600;
-  line-height: 48px;
+  font-size: var(--typography-h2-size);
+  font-weight: var(--typography-h2-weight);
+  line-height: var(--typography-h2-line-height);
+  letter-spacing: var(--typography-h2-letter-spacing);
   margin-bottom: 24px;
 }
 
 h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 0.75rem;
+  font-size: var(--typography-h3-size);
+  font-weight: var(--typography-h3-weight);
+  line-height: var(--typography-h3-line-height);
+  letter-spacing: var(--typography-h3-letter-spacing);
+  margin-bottom: 16px;
 }
 
-/* Utility classes for applying different heading styles */
-.heading-h1 {
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 50px;
-  margin-bottom: 1rem;
+h4 {
+  font-size: var(--typography-h4-size);
+  font-weight: var(--typography-h4-weight);
+  line-height: var(--typography-h4-line-height);
+  letter-spacing: var(--typography-h4-letter-spacing);
+  margin-bottom: 12px;
 }
 
-.heading-h2 {
-  font-size: 44px;
-  font-weight: 600;
-  line-height: 48px;
-  margin-bottom: 0.875rem;
+h5 {
+  font-size: var(--typography-h5-size);
+  font-weight: var(--typography-h5-weight);
+  line-height: var(--typography-h5-line-height);
+  letter-spacing: var(--typography-h5-letter-spacing);
+  margin-bottom: 12px;
 }
 
-.heading-h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 0.75rem;
+/* Typography utility classes using design tokens */
+.typography-display {
+  font-size: var(--typography-display-size);
+  font-weight: var(--typography-display-weight);
+  line-height: var(--typography-display-line-height);
+  letter-spacing: var(--typography-display-letter-spacing);
+}
+
+.typography-h1 {
+  font-size: var(--typography-h1-size);
+  font-weight: var(--typography-h1-weight);
+  line-height: var(--typography-h1-line-height);
+  letter-spacing: var(--typography-h1-letter-spacing);
+}
+
+.typography-h2 {
+  font-size: var(--typography-h2-size);
+  font-weight: var(--typography-h2-weight);
+  line-height: var(--typography-h2-line-height);
+  letter-spacing: var(--typography-h2-letter-spacing);
+}
+
+.typography-h3 {
+  font-size: var(--typography-h3-size);
+  font-weight: var(--typography-h3-weight);
+  line-height: var(--typography-h3-line-height);
+  letter-spacing: var(--typography-h3-letter-spacing);
+}
+
+.typography-h4 {
+  font-size: var(--typography-h4-size);
+  font-weight: var(--typography-h4-weight);
+  line-height: var(--typography-h4-line-height);
+  letter-spacing: var(--typography-h4-letter-spacing);
+}
+
+.typography-h5 {
+  font-size: var(--typography-h5-size);
+  font-weight: var(--typography-h5-weight);
+  line-height: var(--typography-h5-line-height);
+  letter-spacing: var(--typography-h5-letter-spacing);
+}
+
+.typography-body {
+  font-size: var(--typography-body-size);
+  font-weight: var(--typography-body-weight);
+  line-height: var(--typography-body-line-height);
+  letter-spacing: var(--typography-body-letter-spacing);
+}
+
+.typography-body-sm {
+  font-size: var(--typography-body-sm-size);
+  font-weight: var(--typography-body-sm-weight);
+  line-height: var(--typography-body-sm-line-height);
+  letter-spacing: var(--typography-body-sm-letter-spacing);
+}
+
+.typography-caption {
+  font-size: var(--typography-caption-size);
+  font-weight: var(--typography-caption-weight);
+  line-height: var(--typography-caption-line-height);
+  letter-spacing: var(--typography-caption-letter-spacing);
+}
+
+.typography-overline {
+  font-size: var(--typography-overline-size);
+  font-weight: var(--typography-overline-weight);
+  line-height: var(--typography-overline-line-height);
+  letter-spacing: var(--typography-overline-letter-spacing);
+  text-transform: uppercase;
+}
+
+/* Link styles using IBM Plex Mono - opt-in via class */
+.link-mono {
+  font-family: var(--font-family-mono);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }

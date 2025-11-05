@@ -18,7 +18,7 @@ export default function Header() {
           <li>
             <Link 
               href="/" 
-              className="text-lg hover:underline hover:underline-offset-4 transition-all duration-200"
+              className="font-mono link-mono hover:underline hover:underline-offset-4 transition-all duration-200"
             >
               Home
             </Link>
@@ -26,7 +26,7 @@ export default function Header() {
           <li>
             <Link 
               href="/now" 
-              className="text-lg hover:underline hover:underline-offset-4 transition-all duration-200"
+              className="link-mono hover:underline hover:underline-offset-4 transition-all duration-200"
             >
               Now
             </Link>
@@ -34,7 +34,7 @@ export default function Header() {
           <li>
             <Link 
               href="/about" 
-              className="text-lg hover:underline hover:underline-offset-4 transition-all duration-200"
+              className="link-mono hover:underline hover:underline-offset-4 transition-all duration-200"
             >
               About
             </Link>
