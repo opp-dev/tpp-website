@@ -76,21 +76,21 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="font-sans min-h-screen">
-      <main className="container mx-auto p-8 max-w-4xl pt-10">
+    <div className="font-sans min-h-screen bg-white">
+      <main className="container mx-auto px-6 md:px-8 max-w-5xl pt-12 pb-16">
         {/* Introduction Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Welcome to The Product Papers</h2>
-          <div className="prose prose-lg max-w-none">
-            <p className="mb-4">
+        <section className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 tracking-tight">Welcome to The Product Papers</h2>
+          <div className="max-w-3xl">
+            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
               Product development is the art and science of turning ideas into reality. It's where creativity meets 
               strategy, where user needs intersect with business goals, and where innovation transforms into impact.
             </p>
-            <p className="mb-4">
+            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
               Whether you're building digital products, physical goods, or services, the principles remain the same: 
               understand your users, validate your assumptions, iterate quickly, and always keep the bigger picture in mind.
             </p>
-            <p>
+            <p className="text-xl text-gray-700 leading-relaxed">
               Here at The Product Papers, you'll find insights on product strategy, development methodologies, 
               user research, market analysis, and the stories behind successful products. Expect practical advice, 
               real-world case studies, and thoughtful analysis that you can apply to your own product journey.
@@ -99,21 +99,21 @@ export default async function HomePage() {
         </section>
 
         {/* Contact Section */}
-        <section className="mb-16 bg-gray-50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Let's Connect</h2>
-          <div className="text-center">
-            <p className="mb-6">
+        <section className="mb-20 bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center tracking-tight">Let's Connect</h2>
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               Have questions about product development? Want to share your own insights? 
               I'd love to hear from you and discuss all things product.
             </p>
-            <p className="mb-6">
+            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               Whether you're a seasoned product manager, an aspiring entrepreneur, or someone curious about 
               the product development process, let's start a conversation.
             </p>
             <div className="inline-block">
               <a 
                 href="mailto:contact@productpapers.com" 
-                className="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-200 shadow-md hover:shadow-lg"
+                className="inline-flex items-center px-8 py-4 text-base font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 Get In Touch
               </a>
@@ -121,57 +121,65 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <h1 className="typography-h1 text-gray-900 mb-10">Latest Articles from The Product Papers</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 tracking-tight">Latest Articles</h1>
 
-        <section className="space-y-10">
+        <section className="space-y-12">
           {posts.map((post) => (
-            <article key={post._id} className="border-b border-gray-200 pb-8">
+            <article key={post._id} className="border-b border-gray-100 pb-12 last:border-0">
               
               {/* Image (Optional) */}
               {post.mainImage?.asset?.url && (
                 <img 
                   src={post.mainImage.asset.url} 
                   alt={post.mainImage.alt || post.title} 
-                  className="w-full h-64 object-cover rounded-lg mb-4 shadow-md"
+                  className="w-full h-80 object-cover rounded-xl mb-6"
                 />
               )}
 
-              {/* Title and Link */}
-              <Link href={`/blog/${post.slug}`} passHref>
-                <h2 className="text-3xl font-bold text-indigo-700 hover:text-indigo-900 transition duration-150 cursor-pointer">
-                  {post.title}
-                </h2>
-              </Link>
-
-              {/* Metadata */}
-              <p className="text-sm text-gray-500 mt-2">
-                By **{post.author.name}** on {new Date(post.publishedAt).toISOString().split('T')[0]}
-              </p>
-
-              <div className="mt-4 text-gray-700">
-  {/* Display the raw JSON string of the Portable Text for testing */}
-  <div className="mt-4 text-gray-700">
-  <p>
-    {/* Access the first block -> first child -> text property */}
-    {post.body?.[0]?.children?.[0]?.text}
-  </p>
-</div>
-</div>
-              
-              {/* Categories/Tags */}
+              {/* Categories/Tags - Moved to top */}
               {post.categories?.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-2">
+                <div className="mb-4 flex flex-wrap gap-2">
                   {post.categories.map((c, index) => (
-                    <span key={index} className="text-xs font-medium bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
+                    <span key={index} className="text-xs font-semibold uppercase tracking-wide text-blue-700 bg-blue-50 px-3 py-1.5 rounded-md">
                       {c.title}
                     </span>
                   ))}
                 </div>
               )}
 
+              {/* Title and Link */}
+              <Link href={`/blog/${post.slug}`} passHref>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 hover:text-blue-700 transition-colors duration-200 cursor-pointer mb-4 leading-tight">
+                  {post.title}
+                </h2>
+              </Link>
+
+              {/* Metadata */}
+              <div className="flex items-center gap-3 text-sm text-gray-600 mb-5">
+                <span className="font-medium">{post.author.name}</span>
+                <span className="text-gray-400">·</span>
+                <time dateTime={post.publishedAt}>
+                  {new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'short', 
+                    day: 'numeric' 
+                  })}
+                </time>
+              </div>
+
+              {/* Excerpt */}
+              <div className="text-lg text-gray-700 leading-relaxed mb-6">
+                <p>
+                  {post.body?.[0]?.children?.[0]?.text}
+                </p>
+              </div>
+
               {/* Read More Link */}
-              <Link href={`/blog/${post.slug}`} className="mt-4 inline-block text-base font-semibold text-teal-600 hover:text-teal-800 transition duration-150">
-                Continue reading &rarr;
+              <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-base font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-200">
+                Read article
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             </article>
           ))}
