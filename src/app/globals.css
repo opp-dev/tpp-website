@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Color Tokens */
+  --grey-900: #151f26;
+  --grey-800: #283B48;
+  --color-text: var(--grey-900);
+  --color-text-lighter: var(--grey-800);
 
   /* Typography Design Tokens - Desktop */
   
@@ -131,7 +137,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--color-text);
   font-family: var(--font-family-primary);
   font-size: var(--typography-body-size);
   line-height: var(--typography-body-line-height);
@@ -144,6 +150,7 @@ p {
   line-height: var(--typography-body-line-height);
   font-weight: var(--typography-body-weight);
   letter-spacing: var(--typography-body-letter-spacing);
+  color: var(--color-text);
 }
 
 h1 {
@@ -152,7 +159,7 @@ h1 {
   font-weight: var(--typography-h1-weight);
   line-height: var(--typography-h1-line-height);
   letter-spacing: var(--typography-h1-letter-spacing);
-  margin-bottom: 24px;
+  color: var(--color-text);
 }
 
 h2 {
@@ -161,7 +168,7 @@ h2 {
   font-weight: var(--typography-h2-weight);
   line-height: var(--typography-h2-line-height);
   letter-spacing: var(--typography-h2-letter-spacing);
-  margin-bottom: 24px;
+  color: var(--color-text);
 }
 
 h3 {
@@ -170,7 +177,7 @@ h3 {
   font-weight: var(--typography-h3-weight);
   line-height: var(--typography-h3-line-height);
   letter-spacing: var(--typography-h3-letter-spacing);
-  margin-bottom: 16px;
+  color: var(--color-text);
 }
 
 h4 {
@@ -179,7 +186,7 @@ h4 {
   font-weight: var(--typography-h4-weight);
   line-height: var(--typography-h4-line-height);
   letter-spacing: var(--typography-h4-letter-spacing);
-  margin-bottom: 12px;
+  color: var(--color-text);
 }
 
 /* Typography utility classes using design tokens */
@@ -196,6 +203,7 @@ h4 {
   font-weight: var(--typography-h1-weight);
   line-height: var(--typography-h1-line-height);
   letter-spacing: var(--typography-h1-letter-spacing);
+  color: var(--color-text);
 }
 
 .typography-h2 {
@@ -204,6 +212,17 @@ h4 {
   font-weight: var(--typography-h2-weight);
   line-height: var(--typography-h2-line-height);
   letter-spacing: var(--typography-h2-letter-spacing);
+  color: var(--color-text);
+}
+
+/* Article heading - based on h2 with custom weight and line-height */
+.typography-article-h2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--typography-h2-size);
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: var(--typography-h2-letter-spacing);
+  color: var(--color-text);
 }
 
 .typography-h3 {
@@ -212,6 +231,7 @@ h4 {
   font-weight: var(--typography-h3-weight);
   line-height: var(--typography-h3-line-height);
   letter-spacing: var(--typography-h3-letter-spacing);
+  color: var(--color-text);
 }
 
 .typography-h4 {
@@ -220,6 +240,7 @@ h4 {
   font-weight: var(--typography-h4-weight);
   line-height: var(--typography-h4-line-height);
   letter-spacing: var(--typography-h4-letter-spacing);
+  color: var(--color-text);
 }
 
 .typography-body {
@@ -228,6 +249,16 @@ h4 {
   font-weight: var(--typography-body-weight);
   line-height: var(--typography-body-line-height);
   letter-spacing: var(--typography-body-letter-spacing);
+  color: var(--color-text);
+}
+
+.typography-article-abstract-body {
+  font-family: var(--font-family-primary);
+  font-size: var(--typography-body-size);
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: var(--typography-body-letter-spacing);
+  color: var(--color-text-lighter);
 }
 
 .typography-body-sm {
@@ -236,6 +267,7 @@ h4 {
   font-weight: var(--typography-body-sm-weight);
   line-height: var(--typography-body-sm-line-height);
   letter-spacing: var(--typography-body-sm-letter-spacing);
+  color: var(--color-text);
 }
 
 .typography-caption {
@@ -260,9 +292,11 @@ h4 {
   font-weight: 400;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+  color: var(--color-text);
 }
 
 /* Mono font utility class */
 .font-mono {
   font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', monospace;
+  color: var(--color-text);
 }

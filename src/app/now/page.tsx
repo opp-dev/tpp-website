@@ -29,7 +29,7 @@ export default async function NowListPage() {
 
   return (
     <main className="container mx-auto p-8 max-w-3xl">
-      <h1 className="typography-h1 text-gray-900 mb-10">Now</h1>
+      <h1 className="typography-h1 mb-10">Now</h1>
       {(!items || items.length === 0) && (
         <p>No updates yet. Check back soon!</p>
       )}
@@ -55,7 +55,7 @@ export default async function NowListPage() {
                 </h2>
               </Link>
 
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm opacity-60 mt-1">
                 {new Date(it.publishedAt).toISOString().split("T")[0]}
               </p>
 

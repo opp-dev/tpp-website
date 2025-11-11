@@ -47,6 +47,12 @@ export const postType = defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'readingTime',
+      title: 'Reading Time (minutes)',
+      type: 'number',
+      validation: (Rule) => Rule.min(1).integer(),
+    }),
+    defineField({
       name: 'body',
       type: 'blockContent',
     }),

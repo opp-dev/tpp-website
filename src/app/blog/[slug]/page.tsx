@@ -6,6 +6,11 @@ import { notFound } from 'next/navigation';
 
 interface Author {
   name: string;
+  image?: {
+    asset: {
+      url: string;
+    };
+  };
 }
 
 interface Category {
@@ -25,6 +30,7 @@ interface Post {
   slug: string;
   body: any;
   publishedAt: string;
+  readingTime?: number;
   author: Author;
   mainImage?: MainImage;
   categories: Category[];
@@ -36,9 +42,15 @@ const POST_QUERY = `
     title,
     "slug": slug.current,
     publishedAt,
+    readingTime,
     body,
     author->{
-      name
+      name,
+      image {
+        asset->{
+          url
+        }
+      }
     },
     mainImage {
       asset->{
@@ -94,43 +106,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="font-sans min-h-screen bg-white">
-      <main className="container mx-auto px-4 py-12 max-w-4xl">
-        {/* Back Link */}
-        <Link 
-          href="/" 
-          className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mb-8 transition duration-150"
-        >
-          <svg 
-            className="w-5 h-5 mr-2" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M10 19l-7-7m0 0l7-7m-7 7h18" 
-            />
-          </svg>
-          Back to Articles
-        </Link>
+      <main className="container mx-auto pt-32 py-12">
 
         {/* Article Header */}
         <article>
-          <header className="mb-10">
-            <h1 className="typography-h1 text-gray-900 mb-4">
-              {post.title}
-            </h1>
-
-            {/* Metadata */}
-            <div className="flex flex-wrap items-center gap-4 text-gray-600 mb-6">
-              <div className="flex items-center">
-                <span className="font-semibold">By {post.author.name}</span>
-              </div>
-              <span>•</span>
-              <time dateTime={post.publishedAt}>
-                {new Date(post.publishedAt).toLocaleDateString('en-US', {
+          <header className="pb-20 flex flex-col gap-6">
+            {/* Tag and Publish Date Section */}
+            <div className="flex items-center justify-center gap-12">
+              {/* Category Tag */}
+              {post.categories?.length > 0 && (
+                <span className="link-mono border px-2 py-.5 rounded-sm" style={{ color: 'var(--color-text-lighter)' }} >
+                  {post.categories[0].title}
+                </span>
+              )}
+              
+              {/* Publish Date */}
+              <time className="link-mono" style={{ color: 'var(--color-text-lighter)' }} dateTime={post.publishedAt}>
+                Published {new Date(post.publishedAt).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
@@ -138,31 +130,72 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </time>
             </div>
 
-            {/* Categories */}
-            {post.categories?.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-8">
-                {post.categories.map((category, index) => (
-                  <span 
-                    key={index} 
-                    className="text-sm font-medium bg-indigo-100 text-indigo-800 px-4 py-1.5 rounded-full"
-                  >
-                    {category.title}
-                  </span>
-                ))}
-              </div>
-            )}
+            {/* Title */}
+            <div className="mx-auto max-w-[968px] text-center">
+              <h1 className="typography-article-h2">
+                {post.title}
+              </h1>
+            </div>
 
-            {/* Featured Image */}
-            {post.mainImage?.asset?.url && (
-              <div className="mb-10">
-                <img
-                  src={post.mainImage.asset.url}
-                  alt={post.mainImage.alt || post.title}
-                  className="w-full h-auto rounded-xl shadow-lg"
-                />
+            {/* Abstract */}
+            <div className="mx-auto max-w-[672px]">
+              <h2 className="typography-article-abstract-body text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              </h2>
+            </div>
+
+            {/* Author and Metadata */}
+            <div className="flex gap-16 items-center justify-between max-w-[968px] mx-auto" style={{ color: 'var(--color-text-lighter)' }}>
+              {/* Author */}
+              <div className="flex items-center gap-2">
+                {/* Author Avatar */}
+                {post.author.image?.asset?.url ? (
+                  <img
+                    src={post.author.image.asset.url}
+                    alt={post.author.name}
+                    className="w-6 h-6 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white text-sm font-semibold">
+                    {post.author.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
+                <span className="link-mono" style={{ color: 'var(--color-text-lighter)' }}>{post.author.name}</span>
               </div>
-            )}
+
+              {/* Reading Time and Share */}
+              <div className="flex items-center gap-4">
+                {/* Reading Time */}
+                {post.readingTime && (
+                  <div className="flex items-center gap-2 link-mono" style={{ color: 'var(--color-text-lighter)' }}>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>{post.readingTime} min</span>
+                  </div>
+                )}
+
+                {/* Share Button */}
+                <button className="flex items-center gap-2 link-mono" style={{ color: 'var(--color-text-lighter)' }}>
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
+                  <span>Share</span>
+                </button>
+              </div>
+            </div>
           </header>
+
+          {/* Featured Image */}
+          {post.mainImage?.asset?.url && (
+            <div className="mb-10">
+              <img
+                src={post.mainImage.asset.url}
+                alt={post.mainImage.alt || post.title}
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
+            </div>
+          )}
 
           {/* Article Body */}
           <div className="prose prose-lg prose-indigo max-w-none">
@@ -171,44 +204,44 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               components={{
                 block: {
                   normal: ({ children }) => (
-                    <p className="mb-6 text-gray-800 leading-relaxed text-lg">
+                    <p className="mb-6 leading-relaxed text-lg">
                       {children}
                     </p>
                   ),
                   h1: ({ children }) => (
-                    <h1 className="text-4xl font-bold text-gray-900 mt-12 mb-6">
+                    <h1 className="text-4xl font-bold mt-12 mb-6">
                       {children}
                     </h1>
                   ),
                   h2: ({ children }) => (
-                    <h2 className="text-3xl font-bold text-gray-900 mt-10 mb-5">
+                    <h2 className="typography-article-h2 mt-10 mb-5">
                       {children}
                     </h2>
                   ),
                   h3: ({ children }) => (
-                    <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+                    <h3 className="text-2xl font-bold mt-8 mb-4">
                       {children}
                     </h3>
                   ),
                   h4: ({ children }) => (
-                    <h4 className="text-xl font-bold text-gray-900 mt-6 mb-3">
+                    <h4 className="text-xl font-bold mt-6 mb-3">
                       {children}
                     </h4>
                   ),
                   blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-indigo-500 pl-6 py-2 my-8 italic text-gray-700 bg-gray-50 rounded">
+                    <blockquote className="border-l-4 border-indigo-500 pl-6 py-2 my-8 italic bg-gray-50 rounded">
                       {children}
                     </blockquote>
                   ),
                 },
                 list: {
                   bullet: ({ children }) => (
-                    <ul className="list-disc list-inside mb-6 space-y-2 text-gray-800">
+                    <ul className="list-disc list-inside mb-6 space-y-2">
                       {children}
                     </ul>
                   ),
                   number: ({ children }) => (
-                    <ol className="list-decimal list-inside mb-6 space-y-2 text-gray-800">
+                    <ol className="list-decimal list-inside mb-6 space-y-2">
                       {children}
                     </ol>
                   ),
@@ -223,7 +256,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 },
                 marks: {
                   strong: ({ children }) => (
-                    <strong className="font-bold text-gray-900">{children}</strong>
+                    <strong className="font-bold">{children}</strong>
                   ),
                   em: ({ children }) => (
                     <em className="italic">{children}</em>

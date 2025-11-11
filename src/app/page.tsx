@@ -67,7 +67,7 @@ export default async function HomePage() {
   if (!posts || posts.length === 0) {
     return (
       <main className="container mx-auto p-8 max-w-4xl">
-        <h1 className="typography-h1 text-gray-900">The Product Papers</h1>
+        <h1 className="typography-h1">The Product Papers</h1>
         <p className="mt-4">
             Welcome! It looks like there are no published posts yet.
         </p>
@@ -82,15 +82,15 @@ export default async function HomePage() {
         <section className="mb-20">
           <h1>Welcome to The Product Papers</h1>
           <div className="max-w-3xl">
-            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+            <p className="text-xl mb-6 leading-relaxed">
               Product development is the art and science of turning ideas into reality. It's where creativity meets 
               strategy, where user needs intersect with business goals, and where innovation transforms into impact.
             </p>
-            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+            <p className="text-xl mb-6 leading-relaxed">
               Whether you're building digital products, physical goods, or services, the principles remain the same: 
               understand your users, validate your assumptions, iterate quickly, and always keep the bigger picture in mind.
             </p>
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <p className="text-xl leading-relaxed">
               Here at The Product Papers, you'll find insights on product strategy, development methodologies, 
               user research, market analysis, and the stories behind successful products. Expect practical advice, 
               real-world case studies, and thoughtful analysis that you can apply to your own product journey.
@@ -100,13 +100,13 @@ export default async function HomePage() {
 
         {/* Contact Section */}
         <section className="mb-20 bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center tracking-tight">Let's Connect</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center tracking-tight">Let's Connect</h2>
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg mb-6 leading-relaxed">
               Have questions about product development? Want to share your own insights? 
               I'd love to hear from you and discuss all things product.
             </p>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg mb-8 leading-relaxed">
               Whether you're a seasoned product manager, an aspiring entrepreneur, or someone curious about 
               the product development process, let's start a conversation.
             </p>
@@ -121,7 +121,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 tracking-tight">Latest Articles</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight">Latest Articles</h1>
 
         <section className="space-y-12">
           {posts.map((post) => (
@@ -149,15 +149,15 @@ export default async function HomePage() {
 
               {/* Title and Link */}
               <Link href={`/blog/${post.slug}`} passHref>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 hover:text-blue-700 transition-colors duration-200 cursor-pointer mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold hover:text-blue-700 transition-colors duration-200 cursor-pointer mb-4 leading-tight">
                   {post.title}
                 </h2>
               </Link>
 
               {/* Metadata */}
-              <div className="flex items-center gap-3 text-sm text-gray-600 mb-5">
+              <div className="flex items-center gap-3 text-sm mb-5">
                 <span className="font-medium">{post.author.name}</span>
-                <span className="text-gray-400">·</span>
+                <span className="opacity-40">·</span>
                 <time dateTime={post.publishedAt}>
                   {new Date(post.publishedAt).toLocaleDateString('en-US', { 
                     year: 'numeric', 
@@ -168,7 +168,7 @@ export default async function HomePage() {
               </div>
 
               {/* Excerpt */}
-              <div className="text-lg text-gray-700 leading-relaxed mb-6">
+              <div className="text-lg leading-relaxed mb-6">
                 <p>
                   {post.body?.[0]?.children?.[0]?.text}
                 </p>

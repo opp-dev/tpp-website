@@ -60,13 +60,13 @@ export default async function BlogPage() {
   return (
     <div className="font-sans min-h-screen bg-white">
       <main className="container mx-auto px-6 md:px-8 max-w-5xl pt-12 pb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Blog</h1>
-        <p className="text-xl text-gray-700 mb-12 max-w-3xl">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Blog</h1>
+        <p className="text-xl mb-12 max-w-3xl">
           Insights on product strategy, development methodologies, user research, and the stories behind successful products.
         </p>
 
         {posts.length === 0 ? (
-          <p className="text-gray-600">No posts published yet.</p>
+          <p>No posts published yet.</p>
         ) : (
           <section className="space-y-12">
             {posts.map((post) => (
@@ -91,14 +91,14 @@ export default async function BlogPage() {
                 )}
 
                 <Link href={`/blog/${post.slug}`} passHref>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 hover:text-blue-700 transition-colors duration-200 cursor-pointer mb-4 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-bold hover:text-blue-700 transition-colors duration-200 cursor-pointer mb-4 leading-tight">
                     {post.title}
                   </h2>
                 </Link>
 
-                <div className="flex items-center gap-3 text-sm text-gray-600 mb-5">
+                <div className="flex items-center gap-3 text-sm mb-5">
                   <span className="font-medium">{post.author.name}</span>
-                  <span className="text-gray-400">·</span>
+                  <span className="opacity-40">·</span>
                   <time dateTime={post.publishedAt}>
                     {new Date(post.publishedAt).toLocaleDateString('en-US', { 
                       year: 'numeric', 
@@ -108,7 +108,7 @@ export default async function BlogPage() {
                   </time>
                 </div>
 
-                <div className="text-lg text-gray-700 leading-relaxed mb-6">
+                <div className="text-lg leading-relaxed mb-6">
                   <p>
                     {post.body?.[0]?.children?.[0]?.text}
                   </p>
