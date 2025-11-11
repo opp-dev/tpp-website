@@ -7,9 +7,9 @@
   /* Typography Design Tokens - Desktop */
   
   /* Font Families */
-  --font-family-primary: var(--font-roboto), sans-serif;
-  --font-family-heading: var(--font-crimson-pro), serif;
-  --font-family-mono: 'IBM Plex Mono', monospace;
+  --font-family-primary: var(--font-public-sans), sans-serif;
+  --font-family-heading: var(--font-public-sans), sans-serif;
+  --font-family-mono: var(--font-ibm-plex-mono), monospace;
   
   /* Font Sizes */
   --font-size-xs: 12px;
@@ -52,47 +52,41 @@
   --typography-display-letter-spacing: var(--letter-spacing-tight);
   
   /* H1 - Primary heading */
-  --typography-h1-size: 53px;
-  --typography-h1-line-height: var(--line-height-tight);
-  --typography-h1-weight: var(--font-weight-semibold);
-  --typography-h1-letter-spacing: var(--letter-spacing-normal);
-  --typography-h1-family: var(--font-family-heading);
+  --typography-h1-size: 75px;
+  --typography-h1-line-height: 120%;
+  --typography-h1-weight: 400;
+  --typography-h1-letter-spacing: -4px;
+  --typography-h1-family: var(--font-family-primary);
   
   /* H2 - Secondary heading */
-  --typography-h2-size: var(--font-size-4xl);
-  --typography-h2-line-height: 48px;
-  --typography-h2-weight: var(--font-weight-semibold);
-  --typography-h2-letter-spacing: var(--letter-spacing-normal);
+  --typography-h2-size: 55px;
+  --typography-h2-line-height: 100%;
+  --typography-h2-weight: 400;
+  --typography-h2-letter-spacing: -2.2px;
   
   /* H3 - Tertiary heading */
-  --typography-h3-size: var(--font-size-2xl);
-  --typography-h3-line-height: var(--line-height-normal);
-  --typography-h3-weight: var(--font-weight-semibold);
-  --typography-h3-letter-spacing: var(--letter-spacing-normal);
+  --typography-h3-size: 35px;
+  --typography-h3-line-height: 35px;
+  --typography-h3-weight: 400;
+  --typography-h3-letter-spacing: -0.7px;
   
   /* H4 - Quaternary heading */
-  --typography-h4-size: var(--font-size-xl);
-  --typography-h4-line-height: var(--line-height-normal);
-  --typography-h4-weight: var(--font-weight-semibold);
-  --typography-h4-letter-spacing: var(--letter-spacing-normal);
-  
-  /* H5 - Minor heading */
-  --typography-h5-size: var(--font-size-lg);
-  --typography-h5-line-height: var(--line-height-normal);
-  --typography-h5-weight: var(--font-weight-medium);
-  --typography-h5-letter-spacing: var(--letter-spacing-normal);
+  --typography-h4-size: 22px;
+  --typography-h4-line-height: 120%;
+  --typography-h4-weight: 400;
+  --typography-h4-letter-spacing: 0;
   
   /* Body - Standard text */
-  --typography-body-size: var(--font-size-lg);
-  --typography-body-line-height: 27px;
-  --typography-body-weight: var(--font-weight-normal);
-  --typography-body-letter-spacing: var(--letter-spacing-normal);
+  --typography-body-size: 18px;
+  --typography-body-line-height: 120%;
+  --typography-body-weight: 400;
+  --typography-body-letter-spacing: 0;
   
   /* Body Small - Smaller body text */
-  --typography-body-sm-size: var(--font-size-base);
-  --typography-body-sm-line-height: var(--line-height-relaxed);
-  --typography-body-sm-weight: var(--font-weight-normal);
-  --typography-body-sm-letter-spacing: var(--letter-spacing-normal);
+  --typography-body-sm-size: 14px;
+  --typography-body-sm-line-height: 150%;
+  --typography-body-sm-weight: 400;
+  --typography-body-sm-letter-spacing: 0;
   
   /* Caption - Small supporting text */
   --typography-caption-size: var(--font-size-sm);
@@ -110,9 +104,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-roboto);
-  --font-heading: var(--font-crimson-pro);
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: var(--font-public-sans);
+  --font-heading: var(--font-public-sans);
+  --font-mono: var(--font-ibm-plex-mono);
   
   /* Expose typography tokens to Tailwind */
   --font-size-xs: 12px;
@@ -145,6 +139,7 @@ body {
 }
 /* Base typography styles using design tokens */
 p {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-body-size);
   line-height: var(--typography-body-line-height);
   font-weight: var(--typography-body-weight);
@@ -152,7 +147,7 @@ p {
 }
 
 h1 {
-  font-family: var(--font-crimson-pro), serif !important;
+  font-family: var(--font-family-primary);
   font-size: var(--typography-h1-size);
   font-weight: var(--typography-h1-weight);
   line-height: var(--typography-h1-line-height);
@@ -161,6 +156,7 @@ h1 {
 }
 
 h2 {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-h2-size);
   font-weight: var(--typography-h2-weight);
   line-height: var(--typography-h2-line-height);
@@ -169,6 +165,7 @@ h2 {
 }
 
 h3 {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-h3-size);
   font-weight: var(--typography-h3-weight);
   line-height: var(--typography-h3-line-height);
@@ -177,18 +174,11 @@ h3 {
 }
 
 h4 {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-h4-size);
   font-weight: var(--typography-h4-weight);
   line-height: var(--typography-h4-line-height);
   letter-spacing: var(--typography-h4-letter-spacing);
-  margin-bottom: 12px;
-}
-
-h5 {
-  font-size: var(--typography-h5-size);
-  font-weight: var(--typography-h5-weight);
-  line-height: var(--typography-h5-line-height);
-  letter-spacing: var(--typography-h5-letter-spacing);
   margin-bottom: 12px;
 }
 
@@ -201,7 +191,7 @@ h5 {
 }
 
 .typography-h1 {
-  font-family: var(--font-crimson-pro), serif !important;
+  font-family: var(--font-family-primary);
   font-size: var(--typography-h1-size);
   font-weight: var(--typography-h1-weight);
   line-height: var(--typography-h1-line-height);
@@ -209,6 +199,7 @@ h5 {
 }
 
 .typography-h2 {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-h2-size);
   font-weight: var(--typography-h2-weight);
   line-height: var(--typography-h2-line-height);
@@ -216,6 +207,7 @@ h5 {
 }
 
 .typography-h3 {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-h3-size);
   font-weight: var(--typography-h3-weight);
   line-height: var(--typography-h3-line-height);
@@ -223,20 +215,15 @@ h5 {
 }
 
 .typography-h4 {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-h4-size);
   font-weight: var(--typography-h4-weight);
   line-height: var(--typography-h4-line-height);
   letter-spacing: var(--typography-h4-letter-spacing);
 }
 
-.typography-h5 {
-  font-size: var(--typography-h5-size);
-  font-weight: var(--typography-h5-weight);
-  line-height: var(--typography-h5-line-height);
-  letter-spacing: var(--typography-h5-letter-spacing);
-}
-
 .typography-body {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-body-size);
   font-weight: var(--typography-body-weight);
   line-height: var(--typography-body-line-height);
@@ -244,6 +231,7 @@ h5 {
 }
 
 .typography-body-sm {
+  font-family: var(--font-family-primary);
   font-size: var(--typography-body-sm-size);
   font-weight: var(--typography-body-sm-weight);
   line-height: var(--typography-body-sm-line-height);
@@ -267,9 +255,14 @@ h5 {
 
 /* Link styles using IBM Plex Mono - opt-in via class */
 .link-mono {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', monospace;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+}
+
+/* Mono font utility class */
+.font-mono {
+  font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', monospace;
 }

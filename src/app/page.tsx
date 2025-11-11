@@ -80,7 +80,7 @@ export default async function HomePage() {
       <main className="container mx-auto px-6 md:px-8 max-w-5xl pt-12 pb-16">
         {/* Introduction Section */}
         <section className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 tracking-tight">Welcome to The Product Papers</h2>
+          <h1>Welcome to The Product Papers</h1>
           <div className="max-w-3xl">
             <p className="text-xl text-gray-700 mb-6 leading-relaxed">
               Product development is the art and science of turning ideas into reality. It's where creativity meets 

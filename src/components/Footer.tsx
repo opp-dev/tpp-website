@@ -136,7 +136,7 @@ export default function Footer() {
             </div>
           </div>
           <div style={{ maxWidth: '360px' }}>
-            <p style={{ fontSize: '14px', lineHeight: '150%', margin: 0 }}>
+            <p className="typography-body-sm" style={{ margin: 0 }}>
               The Products Papers is product design publication by <a href="https://www.orbitlabs.de" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>Orbit Labs</a>. The project is maintained by Suryanshu Rai. Some other text explaining thing. Lorum ipsum filler fuller textie mextie maxie poodle.
             </p>
           </div>
