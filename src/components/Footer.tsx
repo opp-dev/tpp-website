@@ -45,16 +45,28 @@ const getWeatherCondition = (code: number, isDay: boolean): { condition: string;
   return { condition: 'Clear', icon: isDay ? '☀️' : '🌙' };
 };
 
+const legalLinks = [
+  { href: '/impressum', label: 'Impressum' },
+  { href: '/datenschutzerklaerung', label: 'Datenschutzerklärung' },
+];
+
+const pageLinks = [
+  { href: '/about', label: 'About' },
+  { href: '/now', label: 'Now' },
+  { href: '/manifesto', label: 'Manifesto' },
+];
+
 export default function Footer() {
   const [hamburgTime, setHamburgTime] = useState<string>('');
   const [weather, setWeather] = useState<WeatherData | null>(null);
 
   useEffect(() => {
     const updateTime = () => {
-      const time = new Date().toLocaleTimeString('de-DE', {
+      const time = new Date().toLocaleTimeString('en-US', {
         timeZone: 'Europe/Berlin',
-        hour: '2-digit',
+        hour: 'numeric',
         minute: '2-digit',
+        hour12: true,
       });
       setHamburgTime(time);
     };
@@ -97,35 +109,74 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer style={{ borderTop: '1px solid#dcdcdc', paddingTop: '24px', paddingBottom: '24px' }}>
-      <div className="container mx-auto px-8 max-w-4xl">
+    <footer className="w-full pt-6 pb-[24px]" style={{ background: 'linear-gradient(to top, rgba(138, 221, 144, 0.3), rgba(138, 221, 144, 0))' }}>
+      <div className="px-8">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              <li style={{ marginBottom: '8px' }}>
-                <Link href="/impressum" className="link-mono">Impressum</Link>
-              </li>
-              <li>
-                <Link href="/datenschutzerklaerung" className="link-mono">Datenschutzerklärung</Link>
-              </li>
-            </ul>
+          <div style={{ display: 'flex', gap: '80px' }}>
+            {/* Legal Links Column */}
+            <div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {legalLinks.map((link) => (
+                  <li key={link.href} style={{ lineHeight: '100%' }}>
+                    <Link href={link.href} className="link-mono">{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Page Links Column */}
+            <div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {pageLinks.map((link) => (
+                  <li key={link.href} style={{ lineHeight: '100%' }}>
+                    <Link href={link.href} className="link-mono">{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div>
-            <p>Lorem ipsum</p>
+          <div style={{ maxWidth: '360px' }}>
+            <p style={{ fontSize: '14px', lineHeight: '150%', margin: 0 }}>
+              The Products Papers is product design publication by <a href="https://www.orbitlabs.de" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>Orbit Labs</a>. The project is maintained by Suryanshu Rai. Some other text explaining thing. Lorum ipsum filler fuller textie mextie maxie poodle.
+            </p>
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '24px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '32px', gap: '80px', borderTop: '1px solid #e0e0e0', paddingTop: '16px' }}>
+          {/* Part 1: Crafted text */}
           <div className="font-mono" style={{ fontSize: '14px' }}>
-            <span>Hamburg Altona · {hamburgTime}</span>
+            <span style={{ fontSize: '20px', lineHeight: '20px', display: 'inline-flex', alignItems: 'center' }}>👨🏼‍🎨</span>
+            <span> Hand crafted and </span>
+            <span style={{ fontSize: '20px', lineHeight: '20px', display: 'inline-flex', alignItems: 'center' }}>🤖</span>
+            <span> vibe coded in Altona</span>
           </div>
-          <div className="font-mono" style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          
+          {/* Part 2: Time & Weather */}
+          <div className="font-mono" style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span>{hamburgTime.split(':').map((part, i) => (
+              <span key={i}>
+                {part}
+                {i < hamburgTime.split(':').length - 1 && (
+                  <span style={{
+                    animation: 'blink 1s step-start infinite'
+                  }}>:</span>
+                )}
+              </span>
+            ))}</span>
             {weather && (
               <>
-                <span style={{ fontSize: '32px', lineHeight: '32px', display: 'inline-flex', alignItems: 'center' }}>{weather.icon}</span>
+                <span>·</span>
                 <span>{weather.temperature}°C · {weather.condition}</span>
+                <span style={{ fontSize: '24px', lineHeight: '24px', display: 'inline-flex', alignItems: 'center' }}>{weather.icon}</span>
               </>
             )}
           </div>
+          <style jsx>{`
+            @keyframes blink {
+              50% {
+                opacity: 0;
+              }
+            }
+          `}</style>
         </div>
       </div>
     </footer>
