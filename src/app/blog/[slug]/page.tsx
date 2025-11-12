@@ -188,23 +188,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Featured Image */}
           {post.mainImage?.asset?.url && (
-            <div className="mb-10">
+            <div className="mb-20 mx-auto overflow-hidden rounded-xl shadow-lg" style={{ maxWidth: '968px', maxHeight: '546px' }}>
               <img
                 src={post.mainImage.asset.url}
                 alt={post.mainImage.alt || post.title}
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="w-full h-full object-cover"
               />
             </div>
           )}
 
           {/* Article Body */}
-          <div className="prose prose-lg prose-indigo max-w-none">
+          <div className="mx-auto" style={{ maxWidth: '680px' }}>
             <PortableText 
               value={post.body}
               components={{
                 block: {
                   normal: ({ children }) => (
-                    <p className="mb-6 leading-relaxed text-lg">
+                    <p className="mb-6 text-lg" style={{ lineHeight: '150%' }}>
                       {children}
                     </p>
                   ),
