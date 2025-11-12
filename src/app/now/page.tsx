@@ -7,7 +7,6 @@ interface NowPost {
   slug: string;
   publishedAt: string;
   body: any;
-  images?: any[];
 }
 
 const NOW_INITIAL_QUERY = `
@@ -26,9 +25,14 @@ const NOW_INITIAL_QUERY = `
             dimensions
           }
         }
+      },
+      _type == "file" => {
+        ...,
+        asset->{
+          url
+        }
       }
-    },
-    images
+    }
   }
 `;
 

@@ -1,4 +1,4 @@
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export const nowType = defineType({
   name: 'now',
@@ -20,31 +20,13 @@ export const nowType = defineType({
     defineField({
       name: 'publishedAt',
       title: 'Date',
-      type: 'datetime',
+      type: 'date',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
-    }),
-    defineField({
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'image',
-          options: { hotspot: true },
-          fields: [
-            defineField({
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative text',
-            }),
-          ],
-        }),
-      ],
+      type: 'nowBlockContent',
     }),
     defineField({
       name: 'shareEnabled',

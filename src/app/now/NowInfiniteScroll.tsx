@@ -5,6 +5,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import PublishedDate from "@/components/PublishedDate";
 import ShareButton from "@/components/ShareButton";
+import Link from "next/link";
 
 interface NowPost {
   _id: string;
@@ -75,9 +76,11 @@ export default function NowInfiniteScroll({ initialPosts }: NowInfiniteScrollPro
       <section className="space-y-16">
         {posts.map((post) => (
           <article key={post._id} className="pb-12">
-            <h2 className="typography-article-h3 mb-8">
-              {post.title}
-            </h2>
+            <Link href={`/now/${post.slug}`}>
+              <h2 className="typography-article-h3 mb-8 hover:underline cursor-pointer">
+                {post.title}
+              </h2>
+            </Link>
 
             <div className="prose max-w-none mb-6">
               {post.body && (
