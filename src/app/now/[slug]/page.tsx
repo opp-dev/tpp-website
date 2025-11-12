@@ -1,6 +1,7 @@
 import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
+import { nowPortableTextComponents } from "../portableTextComponents";
 
 interface NowDetail {
   _id: string;
@@ -47,7 +48,7 @@ export default async function NowDetailPage(props: { params: Promise<{ slug: str
       <article className="prose max-w-none">
         {entry.body && (
           <div className="mb-8">
-            <PortableText value={entry.body} />
+            <PortableText value={entry.body} components={nowPortableTextComponents} />
           </div>
         )}
 

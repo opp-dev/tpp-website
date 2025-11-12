@@ -6,6 +6,7 @@ import { PortableText } from "@portabletext/react";
 import PublishedDate from "@/components/PublishedDate";
 import ShareButton from "@/components/ShareButton";
 import Link from "next/link";
+import { nowPortableTextComponents } from "./portableTextComponents";
 
 interface NowPost {
   _id: string;
@@ -86,28 +87,7 @@ export default function NowInfiniteScroll({ initialPosts }: NowInfiniteScrollPro
               {post.body && (
                 <PortableText 
                   value={post.body}
-                  components={{
-                    types: {
-                      image: ({ value }) => {
-                        if (!value?.asset?.url) return null;
-                        return (
-                          <div className="my-8 rounded-lg overflow-hidden">
-                            <img
-                              src={value.asset.url}
-                              alt={value.alt || ''}
-                              className="w-full h-auto"
-                              loading="lazy"
-                            />
-                            {value.alt && (
-                              <p className="text-sm text-gray-600 text-center mt-2 italic">
-                                {value.alt}
-                              </p>
-                            )}
-                          </div>
-                        );
-                      },
-                    },
-                  }}
+                  components={nowPortableTextComponents}
                 />
               )}
             </div>
