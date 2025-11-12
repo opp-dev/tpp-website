@@ -53,6 +53,12 @@ export const postType = defineType({
       validation: (Rule) => Rule.min(1).integer(),
     }),
     defineField({
+      name: 'abstract',
+      title: 'Abstract',
+      type: 'text',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'body',
       type: 'blockContent',
     }),
