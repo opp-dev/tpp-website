@@ -35,14 +35,14 @@ interface BlogPostCardProps {
 
 export default function BlogPostCard({ post }: BlogPostCardProps) {
   return (
-    <Link href={`/blog/${post.slug}`} key={post._id}>
-      <article className="pb-4 max-w-[680px] mx-6 cursor-pointer">
+    <Link href={`/blog/${post.slug}`}>
+      <article className="cursor-pointer">
         
         {/* Categories above the two columns */}
         {post.categories?.length > 0 && (
           <div className="mb-4 flex flex-wrap gap-2">
             {post.categories.map((c, index) => (
-              <span key={index} className="text-xs font-semibold uppercase tracking-wide text-blue-700 bg-blue-50 px-3 py-1.5 rounded-md">
+              <span key={index} className="text-xs font-semibold uppercase tracking-wide text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1.5 rounded-md">
                 {c.title}
               </span>
             ))}

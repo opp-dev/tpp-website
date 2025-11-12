@@ -1,5 +1,5 @@
 import { client } from '@/sanity/client';
-import BlogPostCard from '@/components/BlogPostCard';
+import BlogPostList from '@/components/BlogPostList';
 
 interface Author {
   name: string;
@@ -65,11 +65,7 @@ export default async function BlogPage() {
         {posts.length === 0 ? (
           <p>No posts published yet.</p>
         ) : (
-          <section className="space-y-12">
-            {posts.map((post) => (
-              <BlogPostCard key={post._id} post={post} />
-            ))}
-          </section>
+          <BlogPostList posts={posts} />
         )}
       </main>
     </div>
