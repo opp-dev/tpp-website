@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ShareButton from '@/components/ShareButton';
+import PublishedDate from '@/components/PublishedDate';
 
 interface Author {
   name: string;
@@ -133,13 +134,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               )}
               
               {/* Publish Date */}
-              <time className="link-mono" style={{ color: 'var(--color-text-lighter)' }} dateTime={post.publishedAt}>
-                Published {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </time>
+              <PublishedDate date={post.publishedAt} />
             </div>
 
             {/* Title */}

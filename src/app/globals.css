@@ -70,7 +70,7 @@
   --typography-h2-size: 55px;
   --typography-h2-line-height: 100%;
   --typography-h2-weight: 400;
-  --typography-h2-letter-spacing: -2.2px;
+  --typography-h2-letter-spacing: -1.2px;
   
   /* H3 - Tertiary heading */
   --typography-h3-size: 35px;
@@ -86,7 +86,7 @@
   
   /* Body - Standard text */
   --typography-body-size: 18px;
-  --typography-body-line-height: 120%;
+  --typography-body-line-height: 150%;
   --typography-body-weight: 400;
   --typography-body-letter-spacing: 0;
   
@@ -153,6 +153,7 @@ p {
   font-weight: var(--typography-body-weight);
   letter-spacing: var(--typography-body-letter-spacing);
   color: var(--color-text);
+  margin-bottom: 24px;
 }
 
 h1 {
@@ -223,7 +224,7 @@ h4 {
   font-size: var(--typography-h2-size);
   font-weight: 500;
   line-height: 110%;
-  letter-spacing: var(--typography-h2-letter-spacing);
+  letter-spacing: -2.2px;
   color: var(--color-text);
 }
 
@@ -233,6 +234,15 @@ h4 {
   font-weight: var(--typography-h3-weight);
   line-height: var(--typography-h3-line-height);
   letter-spacing: var(--typography-h3-letter-spacing);
+  color: var(--color-text);
+}
+
+.typography-article-h3 {
+  font-family: var(--font-family-primary);
+  font-size: var(--typography-h3-size);
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.6px;
   color: var(--color-text);
 }
 

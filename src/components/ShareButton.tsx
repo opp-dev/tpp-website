@@ -2,12 +2,17 @@
 
 import { useState } from 'react'
 
-export default function ShareButton() {
+interface ShareButtonProps {
+  url?: string;
+}
+
+export default function ShareButton({ url }: ShareButtonProps = {}) {
   const [showTooltip, setShowTooltip] = useState(false)
 
   const handleShare = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href)
+      const shareUrl = url || window.location.href;
+      await navigator.clipboard.writeText(shareUrl)
       setShowTooltip(true)
       
       // Hide tooltip after 2 seconds
