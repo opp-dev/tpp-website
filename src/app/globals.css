@@ -7,8 +7,10 @@
   /* Color Tokens */
   --grey-900: #151f26;
   --grey-800: #283B48;
+  --grey-700: #4A5F6D;
   --color-text: var(--grey-900);
   --color-text-lighter: var(--grey-800);
+  --color-text-hover: var(--grey-700);
 
   /* Typography Design Tokens - Desktop */
   

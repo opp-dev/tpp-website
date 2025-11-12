@@ -3,6 +3,7 @@ import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ShareButton from '@/components/ShareButton';
 
 interface Author {
   name: string;
@@ -43,7 +44,18 @@ const POST_QUERY = `
     "slug": slug.current,
     publishedAt,
     readingTime,
-    body,
+    body[]{
+      ...,
+      _type == "image" => {
+        ...,
+        asset->{
+          url,
+          metadata {
+            dimensions
+          }
+        }
+      }
+    },
     author->{
       name,
       image {
@@ -176,12 +188,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 )}
 
                 {/* Share Button */}
-                <button className="flex items-center gap-2 link-mono" style={{ color: 'var(--color-text-lighter)' }}>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                  </svg>
-                  <span>Share</span>
-                </button>
+                <ShareButton />
               </div>
             </div>
           </header>
@@ -278,6 +285,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   ),
                 },
                 types: {
+                  image: ({ value }) => {
+                    if (!value?.asset?.url) return null;
+                    return (
+                      <div className="my-8 rounded-lg overflow-hidden">
+                        <img
+                          src={value.asset.url}
+                          alt={value.alt || ''}
+                          className="w-full h-auto"
+                          loading="lazy"
+                        />
+                        {value.alt && (
+                          <p className="text-sm text-gray-600 text-center mt-2 italic">
+                            {value.alt}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  },
                   code: ({ value }) => (
                     <pre className="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto my-8">
                       <code className="text-sm font-mono">{value.code}</code>
