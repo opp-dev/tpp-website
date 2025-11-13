@@ -84,14 +84,14 @@ export default async function HomePage() {
         {/* Introduction Section */}
         <section className="mx-auto px-6 min-h-screen flex flex-col justify-center" style={{ maxWidth: '1280px', paddingBottom: '15vh' }}>
           <div className="max-w-2xl">
-          <h1 style={{ fontSize: '35px', lineHeight: '110%', letterSpacing: '-0.7px', fontWeight: '400'}}>How are really very good things made?</h1>
+          <h1 style={{ fontSize: '35px', lineHeight: '110%', letterSpacing: '-0.7px', fontWeight: '400'}}>How are very really good things made?</h1>
           </div>
           <div className="pt-8" style={{ maxWidth: '580px' }}>
             <p className="text-xl mb-4 leading-relaxed">
               The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
             </p>
             <p className="text-xl mb-4 leading-relaxed">
-              Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make really very good things.
+              Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
             </p>
           </div>
           
