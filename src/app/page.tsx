@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { client } from '@/sanity/client';
 import Link from 'next/link';
+import HomePagePostCard from '@/components/HomePagePostCard';
 
 interface Author {
   name: string;
@@ -22,6 +23,7 @@ interface Post {
   title: string;
   slug: string;
   body: any;
+  abstract?: string;
   publishedAt: string;
   author: Author;
   mainImage?: MainImage; // Main image is optional
@@ -35,6 +37,7 @@ const POSTS_QUERY = `
     "slug": slug.current,
     publishedAt,
     body,
+    abstract,
     
     // Follow the 'author' reference to get the author's name
     author->{
@@ -77,29 +80,47 @@ export default async function HomePage() {
 
   return (
     <div className="font-sans min-h-screen bg-white">
-      <main className="container mx-auto px-6 md:px-8 max-w-5xl pt-12 pb-16">
+      <main className="pb-16">
         {/* Introduction Section */}
-        <section className="mb-20">
-          <h1>Welcome to The Product Papers</h1>
-          <div className="max-w-3xl">
-            <p className="text-xl mb-6 leading-relaxed">
-              Product development is the art and science of turning ideas into reality. It's where creativity meets 
-              strategy, where user needs intersect with business goals, and where innovation transforms into impact.
+        <section className="mx-auto px-6 min-h-screen flex flex-col justify-center" style={{ maxWidth: '1280px', paddingBottom: '15vh' }}>
+          <div className="max-w-2xl">
+          <h1 style={{ fontSize: '35px', lineHeight: '110%', letterSpacing: '-0.7px', fontWeight: '400'}}>How are really very good things made?</h1>
+          </div>
+          <div className="pt-8" style={{ maxWidth: '580px' }}>
+            <p className="text-xl mb-4 leading-relaxed">
+              The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
             </p>
-            <p className="text-xl mb-6 leading-relaxed">
-              Whether you're building digital products, physical goods, or services, the principles remain the same: 
-              understand your users, validate your assumptions, iterate quickly, and always keep the bigger picture in mind.
-            </p>
-            <p className="text-xl leading-relaxed">
-              Here at The Product Papers, you'll find insights on product strategy, development methodologies, 
-              user research, market analysis, and the stories behind successful products. Expect practical advice, 
-              real-world case studies, and thoughtful analysis that you can apply to your own product journey.
+            <p className="text-xl mb-4 leading-relaxed">
+              Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make really very good things.
             </p>
           </div>
+          
+          
+          
         </section>
 
+        <div className="mx-auto px-6" style={{ maxWidth: '1280px' }}>
+          <div className="flex" style={{ gap: '240px' }}>
+            {/* Left Column - Title */}
+            <div className="flex-shrink-0">
+              <h3 className="typography-h3" style={{ fontWeight: '500' }}>Latest Explorations</h3>
+            </div>
+
+            {/* Right Column - Articles */}
+            <div className="flex-1">
+              <div className="space-y-8">
+                {posts.slice(0, 5).map((post) => (
+                  <div key={post._id} className="border-b border-gray-100 pb-8 last:border-0">
+                    <HomePagePostCard post={post} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Contact Section */}
-        <section className="mb-20 bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-12">
+        <section className="mb-20 bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-12 mx-auto px-6" style={{ maxWidth: '1280px' }}>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center tracking-tight">Let's Connect</h2>
           <div className="text-center max-w-2xl mx-auto">
             <p className="text-lg mb-6 leading-relaxed">
@@ -119,70 +140,6 @@ export default async function HomePage() {
               </a>
             </div>
           </div>
-        </section>
-
-        <h1 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight">Latest Articles</h1>
-
-        <section className="space-y-12">
-          {posts.map((post) => (
-            <article key={post._id} className="border-b border-gray-100 pb-12 last:border-0">
-              
-              {/* Image (Optional) */}
-              {post.mainImage?.asset?.url && (
-                <img 
-                  src={post.mainImage.asset.url} 
-                  alt={post.mainImage.alt || post.title} 
-                  className="w-full h-80 object-cover rounded-xl mb-6"
-                />
-              )}
-
-              {/* Categories/Tags - Moved to top */}
-              {post.categories?.length > 0 && (
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {post.categories.map((c, index) => (
-                    <span key={index} className="text-xs font-semibold uppercase tracking-wide text-blue-700 bg-blue-50 px-3 py-1.5 rounded-md">
-                      {c.title}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {/* Title and Link */}
-              <Link href={`/blog/${post.slug}`} passHref>
-                <h2 className="text-3xl md:text-4xl font-bold hover:text-blue-700 transition-colors duration-200 cursor-pointer mb-4 leading-tight">
-                  {post.title}
-                </h2>
-              </Link>
-
-              {/* Metadata */}
-              <div className="flex items-center gap-3 text-sm mb-5">
-                <span className="font-medium">{post.author.name}</span>
-                <span className="opacity-40">·</span>
-                <time dateTime={post.publishedAt}>
-                  {new Date(post.publishedAt).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'short', 
-                    day: 'numeric' 
-                  })}
-                </time>
-              </div>
-
-              {/* Excerpt */}
-              <div className="text-lg leading-relaxed mb-6">
-                <p>
-                  {post.body?.[0]?.children?.[0]?.text}
-                </p>
-              </div>
-
-              {/* Read More Link */}
-              <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-base font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-200">
-                Read article
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </article>
-          ))}
         </section>
       </main>
     </div>
