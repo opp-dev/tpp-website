@@ -99,7 +99,7 @@ export default async function HomePage() {
           
         </section>
 
-        <div className="mx-auto px-6" style={{ maxWidth: '1280px' }}>
+        <div className="mx-auto px-6 mb-40" style={{ maxWidth: '1280px' }}>
           <div className="flex" style={{ gap: '240px' }}>
             {/* Left Column - Title */}
             <div className="flex-shrink-0">
@@ -120,21 +120,18 @@ export default async function HomePage() {
         </div>
 
         {/* Contact Section */}
-        <section className="mb-20 bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-12 mx-auto px-6" style={{ maxWidth: '1280px' }}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center tracking-tight">Let's Connect</h2>
-          <div className="text-center max-w-2xl mx-auto">
+        <section className="mb-20 mx-auto px-6" style={{ maxWidth: '1280px' }}>
+          <h3 className="typography-h3 mb-8" style={{ fontWeight: '500' }}>Moin Moin!</h3>
+          
+          <div style={{ maxWidth: '580px' }}>
             <p className="text-lg mb-6 leading-relaxed">
-              Have questions about product development? Want to share your own insights? 
-              I'd love to hear from you and discuss all things product.
+              Are you trying to make something really very good and need a hand? Or you have some answers or questions to contribute? Either way I would love to hear from you. Drop me a line and I will get back to you!
             </p>
-            <p className="text-lg mb-8 leading-relaxed">
-              Whether you're a seasoned product manager, an aspiring entrepreneur, or someone curious about 
-              the product development process, let's start a conversation.
-            </p>
-            <div className="inline-block">
+            
+            <div>
               <a 
                 href="mailto:contact@productpapers.com" 
-                className="inline-flex items-center px-8 py-4 text-base font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md"
+                className="inline-flex items-center px-4 py-2 text-base font-semibold text-white bg-black rounded-sm hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 Get In Touch
               </a>
