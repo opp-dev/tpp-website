@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Public_Sans, IBM_Plex_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -35,6 +36,11 @@ export default function RootLayout({
       <body
         className={`${publicSans.variable} ${ibmPlexMono.variable} antialiased flex flex-col min-h-screen`}
       >
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="d7eb3f0d-828f-41b2-b826-5075871d8903"
+        />
         <Header />
         <main className="flex-grow">
           {children}
