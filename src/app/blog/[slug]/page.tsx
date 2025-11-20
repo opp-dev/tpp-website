@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ShareButton from '@/components/ShareButton';
 import PublishedDate from '@/components/PublishedDate';
+import { calculateReadingTime } from '@/utils/readingTime';
 
 interface Author {
   name: string;
@@ -44,7 +45,6 @@ const POST_QUERY = `
     title,
     "slug": slug.current,
     publishedAt,
-    readingTime,
     body[]{
       ...,
       _type == "image" => {
@@ -84,7 +84,7 @@ export async function generateStaticParams() {
     {},
     { next: { tags: ['post'] } }
   );
-  
+
   return posts.map((post: { slug: string }) => ({
     slug: post.slug,
   }));
@@ -94,7 +94,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post: Post = await client.fetch(POST_QUERY, { slug }, { next: { tags: ['post'] } });
-  
+
   if (!post) {
     return {
       title: 'Post Not Found',
@@ -109,9 +109,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post: Post = await client.fetch(POST_QUERY, { slug }, { 
-    next: { tags: ['post'], revalidate: 60 } 
+  const post: Post = await client.fetch(POST_QUERY, { slug }, {
+    next: { tags: ['post'], revalidate: 60 }
   });
+
+  if (post) {
+    post.readingTime = calculateReadingTime(post.body);
+  }
 
   if (!post) {
     notFound();
@@ -132,7 +136,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   {post.categories[0].title}
                 </span>
               )}
-              
+
               {/* Publish Date */}
               <PublishedDate date={post.publishedAt} />
             </div>
@@ -201,7 +205,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Article Body */}
           <div className="mx-auto" style={{ maxWidth: '680px' }}>
-            <PortableText 
+            <PortableText
               value={post.body}
               components={{
                 block: {
@@ -269,9 +273,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </code>
                   ),
                   link: ({ children, value }) => (
-                    <a 
-                      href={value?.href} 
-                      target="_blank" 
+                    <a
+                      href={value?.href}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 underline transition duration-150"
                     >
@@ -311,21 +315,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         {/* Back to Articles Footer */}
         <div className="mt-16 pt-8 border-t border-gray-200">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-semibold transition duration-150"
           >
-            <svg 
-              className="w-5 h-5 mr-2" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M10 19l-7-7m0 0l7-7m-7 7h18" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
               />
             </svg>
             Back to All Articles
