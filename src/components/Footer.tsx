@@ -85,12 +85,12 @@ export default function Footer() {
           'https://api.open-meteo.com/v1/forecast?latitude=53.5511&longitude=9.9937&current=temperature_2m,weather_code,is_day&timezone=Europe/Berlin'
         );
         const data = await response.json();
-        
+
         const weatherInfo = getWeatherCondition(
           data.current.weather_code,
           data.current.is_day === 1
         );
-        
+
         setWeather({
           temperature: Math.round(data.current.temperature_2m),
           condition: weatherInfo.condition,
@@ -123,9 +123,9 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            
+
             {/* Page Links Column */}
-            <div>
+            {/* <div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {pageLinks.map((link) => (
                   <li key={link.href} style={{ lineHeight: '100%' }}>
@@ -133,7 +133,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
           <div style={{ maxWidth: '360px' }}>
             <p className="typography-body-sm" style={{ margin: 0 }}>
@@ -149,7 +149,7 @@ export default function Footer() {
             <span style={{ fontSize: '20px', lineHeight: '20px', display: 'inline-flex', alignItems: 'center' }}>🤖</span>
             <span> vibe coded in Altona</span>
           </div>
-          
+
           {/* Part 2: Time & Weather */}
           <div className="font-mono" style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '12px' }}>
             <span>{hamburgTime.split(':').map((part, i) => (
