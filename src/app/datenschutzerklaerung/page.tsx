@@ -1,155 +1,155 @@
 export default function PrivacyPolicyPage() {
   return (
     <main className="container mx-auto p-8 max-w-4xl">
-      <h1 className="typography-h1 text-gray-900 mb-8">Privacy Policy</h1>
+      <h1 className="typography-h3 mb-8">Datenschutzerklärung</h1>
+      <p className="mb-8"><strong>Stand:</strong> 22.11.2025</p>
 
       <div className="prose prose-lg max-w-none">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">1. An Overview of Data Protection</h2>
-        <h3 className="text-xl font-semibold mb-2">General Information</h3>
+        <h2 className="typography-h4 mb-4">1. Ein Überblick über den Datenschutz</h2>
         <p className="mb-4">
-          The following information provides a simple overview of what happens to your personal data when you visit this website.
-          Personal data is any data with which you could be personally identified. Detailed information on the subject of data protection
-          can be found in our privacy policy listed below.
+          Die Betreiber dieser Website nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+        </p>
+        <p className="mb-4">
+          Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Die nachfolgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten geschieht, wenn Sie unsere Website besuchen.
         </p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">2. Hosting</h2>
+        <h2 className="typography-h4 mb-4 mt-8">2. Verantwortliche Stelle (Controller)</h2>
         <p className="mb-4">
-          We host our website with an external provider (hoster). The personal data collected on this website is stored on the hoster&apos;s servers.
-          This may include, but is not limited to, IP addresses, contact requests, metadata and communications, contract information, contact information,
-          names, website access, and other data generated through a website.
+          Die für die Datenverarbeitung auf dieser Website verantwortliche Stelle ist:
         </p>
         <p className="mb-4">
-          The hoster is used for the purpose of fulfilling our contract with our potential and existing customers (Art. 6(1)(b) GDPR) and in the interest
-          of a secure, fast, and efficient provision of our online offer by a professional provider (Art. 6(1)(f) GDPR).
-        </p>
-        <p className="mb-4">
-          Our hoster will only process your data to the extent necessary to fulfill its performance obligations and to follow our instructions
-          with respect to such data.
-        </p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">3. General Information and Mandatory Information</h2>
-
-        <h3 className="text-xl font-semibold mb-2">Data Protection</h3>
-        <p className="mb-4">
-          The operators of this website take the protection of your personal data very seriously. We treat your personal data confidentially and
-          in accordance with the statutory data protection regulations and this privacy policy.
-        </p>
-
-        <h3 className="text-xl font-semibold mb-2">Note on the Responsible Party (Controller)</h3>
-        <p className="mb-4">
-          The responsible party for data processing on this website is:
-        </p>
-        <p className="mb-4">
-          Suryanshu Rai<br />
+          <strong>Suryanshu Rai</strong><br />
           Max-Brauer-Allee 22<br />
           22765 Hamburg<br />
-          Germany
+          Deutschland<br />
+          <strong>E-Mail:</strong> <a href="mailto:suryanshu.rai@orbitlabs.de" className="text-blue-600 hover:underline">suryanshu.rai@orbitlabs.de</a>
         </p>
         <p className="mb-4">
-          Email: <a href="mailto:suryanshu.rai@orbitlabs.de" className="text-blue-600 hover:underline">suryanshu.rai@orbitlabs.de</a>
-        </p>
-        <p className="mb-4">
-          The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing
-          personal data (e.g., names, email addresses, etc.).
+          Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
         </p>
 
-        <h3 className="text-xl font-semibold mb-2">Revocation of Your Consent to Data Processing</h3>
+        <h2 className="typography-h4 mb-4 mt-8">3. Allgemeine Hinweise zur Datenverarbeitung und Ihre Rechte</h2>
+
+        <h3 className="typography-h4 mb-2">Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
         <p className="mb-4">
-          Many data processing operations are only possible with your express consent. You can revoke your consent at any time.
-          The legality of the data processing carried out until the revocation remains unaffected by the revocation.
+          Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
         </p>
 
-        <h3 className="text-xl font-semibold mb-2">Right to Object to Data Collection in Special Cases and to Direct Advertising (Art. 21 GDPR)</h3>
+        <h3 className="typography-h4 mb-2">Widerspruchsrecht gegen Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3>
         <p className="mb-4">
-          IF THE DATA PROCESSING IS BASED ON ART. 6(1)(E) OR (F) GDPR, YOU HAVE THE RIGHT TO OBJECT TO THE PROCESSING OF YOUR PERSONAL DATA
-          AT ANY TIME FOR REASONS ARISING FROM YOUR PARTICULAR SITUATION; THIS ALSO APPLIES TO PROFILING BASED ON THESE PROVISIONS.
-          THE RESPECTIVE LEGAL BASIS ON WHICH PROCESSING IS BASED CAN BE FOUND IN THIS PRIVACY POLICY. IF YOU OBJECT, WE WILL NO LONGER
-          PROCESS YOUR AFFECTED PERSONAL DATA UNLESS WE CAN DEMONSTRATE COMPELLING LEGITIMATE GROUNDS FOR THE PROCESSING THAT OUTWEIGH
-          YOUR INTERESTS, RIGHTS AND FREEDOMS OR THE PROCESSING SERVES THE ASSERTION, EXERCISE OR DEFENSE OF LEGAL CLAIMS (OBJECTION PURSUANT TO ART. 21(1) GDPR).
+          WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. LEGEN SIE WIDERSPRUCH EIN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN, ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).
         </p>
 
-        <h3 className="text-xl font-semibold mb-2">Right to File a Complaint with the Competent Supervisory Authority</h3>
+        <h3 className="typography-h4 mb-2">Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h3>
         <p className="mb-4">
-          In the event of violations of the GDPR, data subjects are entitled to log a complaint with a supervisory authority,
-          in particular in the member state of their habitual residence, their place of work or the place of the alleged violation.
-          The right to lodge a complaint is without prejudice to other administrative or judicial remedies.
+          Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde zu, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.
+        </p>
+        <p className="mb-4">
+          Die für uns zuständige Aufsichtsbehörde ist:<br />
+          <strong>Der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit</strong><br />
+          Ludwig-Erhard-Str. 22, 7. OG<br />
+          20459 Hamburg
         </p>
 
-        <h3 className="text-xl font-semibold mb-2">Right to Data Portability</h3>
+        <h3 className="typography-h4 mb-2">Recht auf Auskunft, Löschung und Berichtigung</h3>
         <p className="mb-4">
-          You have the right to have data that we process automatically on the basis of your consent or in fulfillment of a contract
-          handed over to you or to a third party in a common, machine-readable format. If you request the direct transfer of the data
-          to another person responsible, this will only be done insofar as it is technically feasible.
+          Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten.
         </p>
 
-        <h3 className="text-xl font-semibold mb-2">SSL and/or TLS Encryption</h3>
+        <h3 className="typography-h4 mb-2">Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</h3>
         <p className="mb-4">
-          For security reasons and to protect the transmission of confidential content, such as orders or inquiries that you send to us
-          as the site operator, this site uses SSL or TLS encryption. You can recognize an encrypted connection by the fact that the address line
-          of the browser changes from &quot;http://&quot; to &quot;https://&quot; and by the lock symbol in your browser line.
-        </p>
-
-        <h3 className="text-xl font-semibold mb-2">Information, Deletion and Correction</h3>
-        <p className="mb-4">
-          Within the framework of the applicable legal provisions, you have the right at any time to free information about your stored personal data,
-          its origin and recipient and the purpose of the data processing and, if applicable, a right to correction or deletion of this data.
-          You can contact us at any time regarding this and other questions on the subject of personal data.
-        </p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">4. Data Collection on this Website</h2>
-
-        <h3 className="text-xl font-semibold mb-2">Server Log Files</h3>
-        <p className="mb-4">
-          The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us.
-          These are:
+          Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Das Recht auf Einschränkung der Verarbeitung besteht unter anderem in folgenden Fällen:
         </p>
         <ul className="list-disc pl-6 mb-4">
-          <li>Browser type and browser version</li>
-          <li>Operating system used</li>
+          <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten;</li>
+          <li>Wenn die Verarbeitung unrechtmäßig ist und Sie statt der Löschung die Einschränkung der Nutzung verlangen;</li>
+          <li>Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie diese jedoch zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen benötigen;</li>
+          <li>Wenn Sie Widerspruch gegen die Verarbeitung gemäß Art. 21 Abs. 1 DSGVO eingelegt haben.</li>
+        </ul>
+
+        <h3 className="typography-h4 mb-2">Recht auf Datenübertragbarkeit</h3>
+        <p className="mb-4">
+          Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
+        </p>
+
+        <h3 className="typography-h4 mb-2">SSL- bzw. TLS-Verschlüsselung</h3>
+        <p className="mb-4">
+          Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+        </p>
+
+        <h2 className="typography-h4 mb-4 mt-8">4. Datenverarbeitung auf dieser Website</h2>
+
+        <h3 className="typography-h4 mb-2">Hosting, Server-Log-Dateien und Vercel</h3>
+        <p className="mb-4">
+          Wir hosten unsere Website bei einem externen Dienstleister.
+        </p>
+        <p className="mb-4">
+          <strong>Auftragsverarbeiter:</strong> <strong>Vercel, Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, USA.
+        </p>
+        <p className="mb-4">
+          Der Provider der Seiten (Vercel) erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+        </p>
+        <ul className="list-disc pl-6 mb-4">
+          <li>Browsertyp und Browserversion</li>
+          <li>Verwendetes Betriebssystem</li>
           <li>Referrer URL</li>
-          <li>Hostname of the accessing computer</li>
-          <li>Time of the server inquiry</li>
-          <li>IP address</li>
+          <li>Hostname des zugreifenden Rechners</li>
+          <li>Uhrzeit der Serveranfrage</li>
+          <li>IP-Adresse</li>
         </ul>
         <p className="mb-4">
-          This data is not merged with other data sources.
+          Diese Daten werden nicht mit anderen Datenquellen zusammengeführt.
         </p>
         <p className="mb-4">
-          This data is collected on the basis of Art. 6(1)(f) GDPR. The website operator has a legitimate interest in the technically error-free
-          presentation and optimization of its website – for this purpose, the server log files must be recorded.
-        </p>
-
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">5. Analytics and Advertising</h2>
-
-        <h3 className="text-xl font-semibold mb-2">Umami Analytics</h3>
-        <p className="mb-4">
-          This website uses Umami Analytics, a web analytics service. Umami Analytics is designed to be privacy-focused and GDPR compliant.
+          <strong>Rechtsgrundlage:</strong> Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein <strong>berechtigtes Interesse</strong> an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Dateien erfasst werden.
         </p>
         <p className="mb-4">
-          <strong>No Cookies:</strong> Umami does not use cookies to track you.
-        </p>
-        <p className="mb-4">
-          <strong>No Personal Data:</strong> Umami does not collect any personally identifiable information (PII).
-          IP addresses are anonymized before being stored. We do not track you across other websites.
-        </p>
-        <p className="mb-4">
-          <strong>Data Storage:</strong> The data collected is stored on servers located in the European Union (Umami Cloud).
-        </p>
-        <p className="mb-4">
-          The use of Umami Analytics is based on Art. 6(1)(f) GDPR. The website operator has a legitimate interest in analyzing user behavior
-          in order to optimize both its website and its advertising. Since Umami does not track individual users or store personal data,
-          your privacy is protected.
+          <strong>Speicherdauer:</strong> Die Server-Log-Dateien werden für einen Zeitraum von <strong>maximal 7 Tagen</strong> gespeichert und anschließend gelöscht.
         </p>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">6. Plugins and Tools</h2>
-
-        <h3 className="text-xl font-semibold mb-2">Google Fonts (Local Hosting)</h3>
+        <h3 className="typography-h4 mb-2">Nutzung von Sanity CMS</h3>
         <p className="mb-4">
-          This site uses so-called Google Fonts, which are provided by Google, for the uniform representation of fonts.
-          The Google Fonts are installed locally. There is no connection to Google servers.
+          Wir verwenden das Content-Management-System (CMS) <strong>Sanity</strong> (Sanity.io AS, Storgata 25, 0184 Oslo, Norwegen), um die Inhalte unserer Website zu verwalten. Sanity verarbeitet in unserem Auftrag die Inhalte der Website (Texte, Bilder, Metadaten). Personenbezogene Daten der Website-Besucher werden hierbei grundsätzlich nicht verarbeitet.
         </p>
         <p className="mb-4">
-          For more information about Google Fonts, please visit <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://developers.google.com/fonts/faq</a> and read Google&apos;s privacy policy: <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://policies.google.com/privacy?hl=en</a>.
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse an der effizienten und professionellen Verwaltung der Inhalte).
+        </p>
+
+        <h2 className="typography-h4 mb-4 mt-8">5. Analytics und Werbung</h2>
+
+        <h3 className="typography-h4 mb-2">Umami Analytics</h3>
+        <p className="mb-4">
+          Diese Website verwendet <strong>Umami Analytics</strong>, einen Webanalysedienst. Umami ist darauf ausgelegt, datenschutzfreundlich und DSGVO-konform zu sein.
+        </p>
+        <ul className="list-disc pl-6 mb-4">
+          <li><strong>Keine Cookies:</strong> Umami verwendet keine Cookies zur Verfolgung der Nutzer.</li>
+          <li><strong>Keine personenbezogenen Daten:</strong> Umami sammelt keine persönlich identifizierbaren Informationen (PII). IP-Adressen werden vor der Speicherung anonymisiert. Wir verfolgen Sie nicht über andere Websites hinweg.</li>
+          <li><strong>Datenspeicherung:</strong> Die erfassten Daten werden auf Servern innerhalb der <strong>Europäischen Union</strong> gespeichert (Umami Cloud).</li>
+        </ul>
+        <p className="mb-4">
+          <strong>Zweck:</strong> Analyse des Nutzerverhaltens zur Optimierung unseres Webangebots.<br />
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein <strong>berechtigtes Interesse</strong> an der statistischen Analyse des Nutzerverhaltens zur Optimierung seines Webangebots, wobei durch die Anonymisierung der IP-Adressen und den Verzicht auf Cookies die Privatsphäre des Nutzers geschützt ist.
+        </p>
+        <p className="mb-4">
+          <strong>Speicherdauer:</strong> Die von Umami Analytics erfassten anonymisierten Analysedaten werden für <strong>12 Monate</strong> gespeichert und danach gelöscht.
+        </p>
+
+        <h2 className="typography-h4 mb-4 mt-8">6. Plugins und Tools</h2>
+
+        <h3 className="typography-h4 mb-2">Google Fonts (Lokales Hosting)</h3>
+        <p className="mb-4">
+          Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten sogenannte Google Fonts, die von Google bereitgestellt werden. Die Google Fonts sind <strong>lokal installiert</strong>. Eine Verbindung zu Servern von Google findet hierdurch <strong>nicht</strong> statt.
+        </p>
+        <p className="mb-4">
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse an der technisch einwandfreien und optisch ansprechenden Darstellung der Website).
+        </p>
+
+        <h2 className="typography-h4 mb-4 mt-8">7. Datenübermittlung in Drittstaaten</h2>
+        <p className="mb-4">
+          Wir nutzen Dienstleister, wie den Hoster <strong>Vercel, Inc.</strong>, die ihren Sitz in den USA haben. Die USA sind ein Drittland, das datenschutzrechtlich kein mit der EU vergleichbares Schutzniveau bietet.
+        </p>
+        <p className="mb-4">
+          <strong>Sicherheitsgarantien:</strong> Bei einer Datenübermittlung an Unternehmen in den USA stützen wir uns auf deren Zertifizierung im Rahmen des <strong>EU-US Data Privacy Framework (DPF)</strong>. Sollte ein Dienstleister nicht im DPF gelistet sein, stellen wir den Schutz Ihrer Daten durch den Abschluss der von der EU-Kommission erlassenen <strong>Standardvertragsklauseln (SCC)</strong> sicher.
         </p>
       </div>
     </main>
