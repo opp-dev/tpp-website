@@ -37,9 +37,9 @@ export default function HomePagePostCard({ post }: HomePagePostCardProps) {
     <Link href={`/blog/${post.slug}`}>
       <article className="cursor-pointer">
         {/* Two column layout */}
-        <div className="flex gap-6">
+        <div className="flex flex-col-reverse sm:flex-row gap-6">
           {/* Left side - Text content */}
-          <div className="max-w-[464px] flex-shrink-0">
+          <div className="flex-1 min-w-0 max-w-[464px]">
             <h4 className="typography-h4 mb-4">
               {post.title}
             </h4>
@@ -50,7 +50,7 @@ export default function HomePagePostCard({ post }: HomePagePostCardProps) {
               </p>
             )}
 
-            <div className="link-mono" style={{ fontSize: '12px', color: '#4b5563'}}>
+            <div className="link-mono" style={{ fontSize: '12px', color: '#4b5563' }}>
               <time dateTime={post.publishedAt}>
                 Published {new Date(post.publishedAt).toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -62,12 +62,12 @@ export default function HomePagePostCard({ post }: HomePagePostCardProps) {
           </div>
 
           {/* Right side - Image */}
-          <div className="flex-1 flex flex-col items-end">
+          <div className="flex-1 flex flex-col sm:items-end">
             {post.mainImage?.asset?.url && (
-              <img 
-                src={post.mainImage.asset.url} 
-                alt={post.mainImage.alt || post.title} 
-                className="min-w-[160px] max-h-[110px] object-cover rounded"
+              <img
+                src={post.mainImage.asset.url}
+                alt={post.mainImage.alt || post.title}
+                className="w-full sm:w-auto sm:min-w-[160px] h-48 sm:h-auto sm:max-h-[110px] object-cover rounded"
               />
             )}
           </div>

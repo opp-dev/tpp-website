@@ -100,8 +100,8 @@ export default async function HomePage() {
 
         </section>
 
-        <div className="mx-auto px-6 mb-40" style={{ maxWidth: '1280px' }}>
-          <div className="flex" style={{ gap: '240px' }}>
+        <div className="mx-auto px-6 mb-20 lg:mb-40" style={{ maxWidth: '1280px' }}>
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-[240px]">
             {/* Left Column - Title */}
             <div className="flex-shrink-0">
               <h3 className="typography-h3" style={{ fontWeight: '500' }}>Latest Explorations</h3>
