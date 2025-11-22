@@ -9,12 +9,18 @@ interface ShareButtonProps {
 export default function ShareButton({ url }: ShareButtonProps = {}) {
   const [showTooltip, setShowTooltip] = useState(false)
 
-  const handleShare = async () => {
+  const handleShare = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     try {
-      const shareUrl = url || window.location.href;
+      let shareUrl = url || window.location.href;
+      if (shareUrl.startsWith('/')) {
+        shareUrl = `${window.location.origin}${shareUrl}`;
+      }
       await navigator.clipboard.writeText(shareUrl)
       setShowTooltip(true)
-      
+
       // Hide tooltip after 2 seconds
       setTimeout(() => {
         setShowTooltip(false)
@@ -26,10 +32,10 @@ export default function ShareButton({ url }: ShareButtonProps = {}) {
 
   return (
     <div style={{ position: 'relative' }}>
-      <button 
+      <button
         onClick={handleShare}
-        className="flex items-center gap-2 link-mono" 
-        style={{ 
+        className="flex items-center gap-2 link-mono"
+        style={{
           color: 'var(--color-text-lighter)',
           cursor: 'pointer',
           transition: 'color 0.2s ease'
@@ -46,19 +52,19 @@ export default function ShareButton({ url }: ShareButtonProps = {}) {
         }}
       >
         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" 
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
           />
         </svg>
         <span style={{ transition: 'text-decoration 0.2s ease' }}>Share</span>
       </button>
-      
+
       {/* Tooltip */}
       {showTooltip && (
-        <div 
+        <div
           style={{
             position: 'absolute',
             top: '100%',

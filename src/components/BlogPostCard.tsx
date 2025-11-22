@@ -37,7 +37,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
   return (
     <Link href={`/blog/${post.slug}`}>
       <article className="cursor-pointer">
-        
+
         {/* Categories above the two columns */}
         {post.categories?.length > 0 && (
           <div className="mb-4 flex flex-wrap gap-2">
@@ -65,16 +65,16 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
 
             <div className="flex items-center justify-between">
               <PublishedDate date={post.publishedAt} />
-              <ShareButton />
+              <ShareButton url={`/blog/${post.slug}`} />
             </div>
           </div>
 
           {/* Right side - Image */}
           <div className="flex-1 flex flex-col items-end">
             {post.mainImage?.asset?.url && (
-              <img 
-                src={post.mainImage.asset.url} 
-                alt={post.mainImage.alt || post.title} 
+              <img
+                src={post.mainImage.asset.url}
+                alt={post.mainImage.alt || post.title}
                 className="min-w-[160px] max-h-[110px] object-cover rounded"
               />
             )}

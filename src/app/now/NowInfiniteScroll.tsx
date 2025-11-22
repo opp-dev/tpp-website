@@ -85,7 +85,7 @@ export default function NowInfiniteScroll({ initialPosts }: NowInfiniteScrollPro
 
             <div className="prose max-w-none mb-6">
               {post.body && (
-                <PortableText 
+                <PortableText
                   value={post.body}
                   components={nowPortableTextComponents}
                 />
@@ -104,10 +104,10 @@ export default function NowInfiniteScroll({ initialPosts }: NowInfiniteScrollPro
                 ))}
               </div>
             ) : null}
-            
+
             <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
               <PublishedDate date={post.publishedAt} />
-              <ShareButton url={`${typeof window !== 'undefined' ? window.location.origin : ''}/now/${post.slug}`} />
+              <ShareButton url={`/now/${post.slug}`} />
             </div>
           </article>
         ))}
