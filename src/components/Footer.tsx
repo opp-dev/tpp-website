@@ -111,7 +111,7 @@ export default function Footer() {
   return (
     <footer className="w-full pt-6 pb-[24px]" style={{ background: 'linear-gradient(to top, rgba(138, 221, 144, 0.3), rgba(138, 221, 144, 0))' }}>
       <div className="px-8">
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className="flex justify-between max-mobile:flex-col-reverse max-mobile:gap-8">
           <div style={{ display: 'flex', gap: '80px' }}>
             {/* Legal Links Column */}
             <div>
@@ -141,7 +141,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '32px', gap: '80px', borderTop: '1px solid #e0e0e0', paddingTop: '16px' }}>
+        <div className="flex justify-center items-center mt-8 gap-20 border-t border-[#e0e0e0] pt-4 max-mobile:flex-col max-mobile:gap-4">
           {/* Part 1: Crafted text */}
           <div className="font-mono" style={{ fontSize: '14px' }}>
             <span style={{ fontSize: '20px', lineHeight: '20px', display: 'inline-flex', alignItems: 'center' }}>👨🏼‍🎨</span>
@@ -151,7 +151,7 @@ export default function Footer() {
           </div>
 
           {/* Part 2: Time & Weather */}
-          <div className="font-mono" style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div className="font-mono text-[14px] flex items-center gap-3 max-mobile:gap-2 max-mobile:flex-wrap max-mobile:justify-center">
             <span>{hamburgTime.split(':').map((part, i) => (
               <span key={i}>
                 {part}

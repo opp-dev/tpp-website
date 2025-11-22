@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  
+
   /* Color Tokens */
   --grey-900: #151f26;
   --grey-800: #283B48;
@@ -13,12 +13,12 @@
   --color-text-hover: var(--grey-700);
 
   /* Typography Design Tokens - Desktop */
-  
+
   /* Font Families */
   --font-family-primary: var(--font-public-sans), sans-serif;
   --font-family-heading: var(--font-public-sans), sans-serif;
   --font-family-mono: var(--font-ibm-plex-mono), monospace;
-  
+
   /* Font Sizes */
   --font-size-xs: 12px;
   --font-size-sm: 14px;
@@ -31,7 +31,7 @@
   --font-size-4xl: 44px;
   --font-size-5xl: 50px;
   --font-size-6xl: 60px;
-  
+
   /* Line Heights */
   --line-height-none: 1;
   --line-height-tight: 1.1;
@@ -39,69 +39,69 @@
   --line-height-normal: 1.4;
   --line-height-relaxed: 1.5;
   --line-height-loose: 1.75;
-  
+
   /* Font Weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  
+
   /* Letter Spacing */
   --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.02em;
-  
+
   /* Semantic Typography Tokens */
-  
+
   /* Display - For large hero text */
   --typography-display-size: var(--font-size-6xl);
   --typography-display-line-height: var(--line-height-tight);
   --typography-display-weight: var(--font-weight-bold);
   --typography-display-letter-spacing: var(--letter-spacing-tight);
-  
+
   /* H1 - Primary heading */
   --typography-h1-size: 75px;
   --typography-h1-line-height: 120%;
   --typography-h1-weight: 400;
   --typography-h1-letter-spacing: -4px;
   --typography-h1-family: var(--font-family-primary);
-  
+
   /* H2 - Secondary heading */
   --typography-h2-size: 55px;
   --typography-h2-line-height: 100%;
   --typography-h2-weight: 400;
   --typography-h2-letter-spacing: -1.2px;
-  
+
   /* H3 - Tertiary heading */
   --typography-h3-size: 35px;
   --typography-h3-line-height: 35px;
   --typography-h3-weight: 400;
   --typography-h3-letter-spacing: -0.7px;
-  
+
   /* H4 - Quaternary heading */
   --typography-h4-size: 22px;
   --typography-h4-line-height: 140%;
   --typography-h4-weight: 700;
   --typography-h4-letter-spacing: 0;
-  
+
   /* Body - Standard text */
   --typography-body-size: 18px;
   --typography-body-line-height: 150%;
   --typography-body-weight: 400;
   --typography-body-letter-spacing: 0;
-  
+
   /* Body Small - Smaller body text */
   --typography-body-sm-size: 14px;
   --typography-body-sm-line-height: 150%;
   --typography-body-sm-weight: 400;
   --typography-body-sm-letter-spacing: 0;
-  
+
   /* Caption - Small supporting text */
   --typography-caption-size: var(--font-size-sm);
   --typography-caption-line-height: var(--line-height-normal);
   --typography-caption-weight: var(--font-weight-normal);
   --typography-caption-letter-spacing: var(--letter-spacing-normal);
-  
+
   /* Overline - Small uppercase labels */
   --typography-overline-size: var(--font-size-xs);
   --typography-overline-line-height: var(--line-height-normal);
@@ -115,7 +115,7 @@
   --font-sans: var(--font-public-sans);
   --font-heading: var(--font-public-sans);
   --font-mono: var(--font-ibm-plex-mono);
-  
+
   /* Expose typography tokens to Tailwind */
   --font-size-xs: 12px;
   --font-size-sm: 14px;
@@ -128,6 +128,9 @@
   --font-size-4xl: 44px;
   --font-size-5xl: 50px;
   --font-size-6xl: 60px;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 500px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -145,6 +148,7 @@ body {
   line-height: var(--typography-body-line-height);
   font-weight: var(--typography-body-weight);
 }
+
 /* Base typography styles using design tokens */
 p {
   font-family: var(--font-family-primary);
