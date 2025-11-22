@@ -33,6 +33,7 @@ interface Post {
   slug: string;
   body: any;
   publishedAt: string;
+  abstract: string;
   readingTime?: number;
   author: Author;
   mainImage?: MainImage;
@@ -45,6 +46,7 @@ const POST_QUERY = `
     title,
     "slug": slug.current,
     publishedAt,
+    abstract,
     body[]{
       ...,
       _type == "image" => {
@@ -149,11 +151,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
 
             {/* Abstract */}
-            <div className="mx-auto max-w-[672px]">
-              <h2 className="typography-article-abstract-body text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-              </h2>
-            </div>
+            {post.abstract && (
+              <div className="mx-auto max-w-[672px]">
+                <h2 className="typography-article-abstract-body text-center">
+                  {post.abstract}
+                </h2>
+              </div>
+            )}
 
             {/* Author and Metadata */}
             <div className="flex gap-16 items-center justify-between max-w-[968px] mx-auto" style={{ color: 'var(--color-text-lighter)' }}>
