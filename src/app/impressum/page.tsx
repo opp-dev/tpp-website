@@ -1,43 +1,54 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Impressum",
+};
+
 export default function Impressum() {
   return (
-    <div className="container mx-auto px-8 py-16 max-w-4xl">
-      <main>
-        <h2 className="text-3xl font-bold mb-8">Imprint</h2>
-        <div className="prose prose-lg">
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">Information pursuant to Sect. 5 DDG</h3>
-            <p className="mb-4">
-              Suryanshu Rai<br />
-              Max-Brauer-Allee 22<br />
-              22765 Hamburg<br />
-              Germany
-            </p>
+    <main className="container mx-auto p-8 max-w-4xl">
+      <h1 className="typography-h3 mb-8">Impressum</h1>
+      <div className="prose prose-lg max-w-none">
 
-            <h3 className="text-xl font-semibold mb-4">Contact</h3>
-            <p className="mb-4">
-              E-Mail: <a href="mailto:suryanshu.rai@orbitlabs.de" className="text-blue-600 hover:underline">suryanshu.rai@orbitlabs.de</a>
-            </p>
+        <h2 className="typography-h4 mb-4">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</h2>
+        <p className="mb-4">
+          Suryanshu Rai<br />
+          Max-Brauer-Allee 22<br />
+          22765 Hamburg<br />
+          Deutschland
+        </p>
 
-            <h3 className="text-xl font-semibold mb-4">Person responsible for editorial</h3>
-            <p className="mb-4">
-              Suryanshu Rai<br />
-              Max-Brauer-Allee 22<br />
-              22765 Hamburg
-            </p>
-          </div>
+        <h2 className="typography-h4 mb-4 mt-8">Kontakt</h2>
+        <p className="mb-4">
+          E-Mail: <a href="mailto:suryanshu.rai@orbitlabs.de" className="text-blue-600 hover:underline">suryanshu.rai@orbitlabs.de</a>
+        </p>
 
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">Disclaimer</h3>
-            <p className="mb-4">
-              <strong>Liability for Contents</strong><br />
-              As service providers, we are liable for own contents of these websites according to Sect. 7, Para. 1 DDG. However, according to Sect. 8 to 10 DDG, service providers are not obligated to permanently monitor submitted or stored information or to search for evidences that indicate illegal activities.
-            </p>
-            <p>
-              Legal obligations to removing information or to blocking the use of information remain unchallenged. In this case, liability is only possible at the time of knowledge about a specific violation of law. Illegal contents will be removed immediately at the time we get knowledge of them.
-            </p>
-          </div>
-        </div>
-      </main>
-    </div>
+        <h2 className="typography-h4 mb-4 mt-8">Verantwortlich für den redaktionellen Inhalt (gemäß § 18 Abs. 2 MStV)</h2>
+        <p className="mb-4">
+          Suryanshu Rai<br />
+          Max-Brauer-Allee 22<br />
+          22765 Hamburg
+        </p>
+
+        <hr className="my-8 border-gray-200" />
+
+        <h2 className="typography-h4 mb-4">EU-Streitschlichtung</h2>
+        <p className="mb-4">
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://ec.europa.eu/consumers/odr/</a>.<br />
+          Unsere E-Mail-Adresse finden Sie oben im Impressum.
+        </p>
+
+        <hr className="my-8 border-gray-200" />
+
+        <h2 className="typography-h4 mb-4">Haftungsausschluss</h2>
+        <p className="mb-4">
+          <strong>Haftung für Inhalte</strong><br />
+          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach § 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+        </p>
+        <p>
+          Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+        </p>
+      </div>
+    </main>
   );
 }

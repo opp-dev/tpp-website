@@ -46,7 +46,7 @@ const getWeatherCondition = (code: number, isDay: boolean): { condition: string;
 };
 
 const legalLinks = [
-  { href: '/impressum', label: 'Imprint' },
+  { href: '/impressum', label: 'Impressum' },
   { href: '/datenschutzerklaerung', label: 'Datenschutz\u00ADerklärung' },
 ];
 
