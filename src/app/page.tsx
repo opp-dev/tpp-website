@@ -5,6 +5,7 @@ import HomePagePostCard from '@/components/HomePagePostCard';
 import EmailCopyLink from '@/components/EmailCopyLink';
 import Container from '@/components/Container';
 import TextSection from '@/components/TextSection';
+import { TextDefault, TextNarrow } from '@/components/TextLayout';
 
 interface Author {
   name: string;
@@ -86,13 +87,18 @@ export default async function HomePage() {
       <main className="pb-16">
         {/* Introduction Section */}
         <Container className="min-h-screen flex flex-col justify-center pb-[15vh]">
-          <TextSection title="How are very really good things made?">
-            <p>
-              The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
-            </p>
-            <p>
-              Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
-            </p>
+          <TextSection>
+            <TextDefault className="typography-h3">
+              How are very really good things made?
+            </TextDefault>
+            <TextNarrow className="typography-body">
+              <p>
+                The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
+              </p>
+              <p>
+                Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
+              </p>
+            </TextNarrow>
           </TextSection>
         </Container>
 
@@ -118,10 +124,15 @@ export default async function HomePage() {
 
         {/* Contact Section */}
         <Container className="mb-20">
-          <TextSection title="Moin Moin!">
-            <p>
-              Are you trying to make something really very good and need a hand? Or you have some answers or questions to contribute? Either way I would love to hear from you. Drop me a line at <EmailCopyLink email="suryanshu.rai@orbitlabs.de" /> and I will get back to you!
-            </p>
+          <TextSection>
+            <TextDefault className="typography-h3">
+              Moin Moin!
+            </TextDefault>
+            <TextNarrow className="typography-body">
+              <p>
+                Are you trying to make something really very good and need a hand? Or you have some answers or questions to contribute? Either way I would love to hear from you. Drop me a line at <EmailCopyLink email="suryanshu.rai@orbitlabs.de" /> and I will get back to you!
+              </p>
+            </TextNarrow>
           </TextSection>
         </Container>
       </main>
