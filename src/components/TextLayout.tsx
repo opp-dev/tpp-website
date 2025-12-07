@@ -16,6 +16,7 @@ export function TextNarrow({ children, className = "" }: TextLayoutProps) {
 export function TextDefault({ children, className = "" }: TextLayoutProps) {
     return (
         <div className={`max-w-2xl ${className}`}>
+            {/* 672px */}
             {children}
         </div>
     );
