@@ -270,6 +270,9 @@ h4 {
   line-height: var(--typography-body-line-height);
   letter-spacing: var(--typography-body-letter-spacing);
   color: var(--color-text);
+}
+
+.typography-body p {
   margin-bottom: 24px;
 }
 
