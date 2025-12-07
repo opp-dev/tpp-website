@@ -11,7 +11,7 @@ export default function TextSection({ title, children, className = "" }: TextSec
     return (
         <div className={className}>
             {title && (
-                <TextDefault className="typography-h3 mb-8">
+                <TextDefault className="typography-h3">
                     {title}
                 </TextDefault>
             )}

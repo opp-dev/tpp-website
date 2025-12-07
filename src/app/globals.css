@@ -161,7 +161,6 @@ p {
   font-weight: var(--typography-body-weight);
   letter-spacing: var(--typography-body-letter-spacing);
   color: var(--color-text);
-  margin-bottom: 24px;
 }
 
 h1 {
@@ -243,6 +242,7 @@ h4 {
   line-height: var(--typography-h3-line-height);
   letter-spacing: var(--typography-h3-letter-spacing);
   color: var(--color-text);
+  margin-bottom: 32px;
 }
 
 .typography-article-h3 {
@@ -270,6 +270,7 @@ h4 {
   line-height: var(--typography-body-line-height);
   letter-spacing: var(--typography-body-letter-spacing);
   color: var(--color-text);
+  margin-bottom: 24px;
 }
 
 .typography-article-abstract-body {
