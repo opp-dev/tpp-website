@@ -3,6 +3,8 @@ import { client } from '@/sanity/client';
 import Link from 'next/link';
 import HomePagePostCard from '@/components/HomePagePostCard';
 import EmailCopyLink from '@/components/EmailCopyLink';
+import Container from '@/components/Container';
+import TextSection from '@/components/TextSection';
 
 interface Author {
   name: string;
@@ -83,28 +85,22 @@ export default async function HomePage() {
     <div className="font-sans min-h-screen bg-white">
       <main className="pb-16">
         {/* Introduction Section */}
-        <section className="mx-auto px-6 min-h-screen flex flex-col justify-center" style={{ maxWidth: '1280px', paddingBottom: '15vh' }}>
-          <div className="max-w-2xl">
-            <h1 style={{ fontSize: '35px', lineHeight: '110%', letterSpacing: '-0.7px', fontWeight: '400' }}>How are very really good things made?</h1>
-          </div>
-          <div className="pt-8" style={{ maxWidth: '580px' }}>
-            <p className="text-xl mb-4 leading-relaxed">
+        <Container className="min-h-screen flex flex-col justify-center pb-[15vh]">
+          <TextSection title="How are very really good things made?">
+            <p className="mb-4">
               The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
             </p>
-            <p className="text-xl mb-4 leading-relaxed">
+            <p className="mb-4">
               Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
             </p>
-          </div>
-
-
-
-        </section>
+          </TextSection>
+        </Container>
 
         <div className="mx-auto px-6 mb-20 lg:mb-40" style={{ maxWidth: '1280px' }}>
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-[240px]">
             {/* Left Column - Title */}
             <div className="flex-shrink-0">
-              <h3 className="typography-h3" style={{ fontWeight: '500' }}>Latest Explorations</h3>
+              <h3 className="typography-h3 font-medium">Latest Explorations</h3>
             </div>
 
             {/* Right Column - Articles */}
@@ -121,15 +117,13 @@ export default async function HomePage() {
         </div>
 
         {/* Contact Section */}
-        <section className="mb-20 mx-auto px-6" style={{ maxWidth: '1280px' }}>
-          <h3 className="typography-h3 mb-8" style={{ fontWeight: '500' }}>Moin Moin!</h3>
-
-          <div style={{ maxWidth: '580px' }}>
-            <p className="text-lg mb-6 leading-relaxed">
+        <Container className="mb-20">
+          <TextSection title="Moin Moin!">
+            <p className="mb-6">
               Are you trying to make something really very good and need a hand? Or you have some answers or questions to contribute? Either way I would love to hear from you. Drop me a line at <EmailCopyLink email="suryanshu.rai@orbitlabs.de" /> and I will get back to you!
             </p>
-          </div>
-        </section>
+          </TextSection>
+        </Container>
       </main>
     </div>
   );
