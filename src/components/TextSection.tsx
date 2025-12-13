@@ -1,13 +1,23 @@
 import React from 'react';
 
+// Define the allowed alignment values
+type TextSectionAlign = 'left' | 'center' | 'right';
+
 interface TextSectionProps {
     children: React.ReactNode;
     className?: string;
+    align?: TextSectionAlign;
 }
 
-export default function TextSection({ children, className = "" }: TextSectionProps) {
+export default function TextSection({ children, className = "", align = 'left' }: TextSectionProps) {
+    const alignmentClasses = {
+        left: '', // Default behavior (usually block or flex-start)
+        center: 'mx-auto w-fit max-w-full',
+        right: 'flex flex-col items-end',
+    };
+
     return (
-        <div className={className}>
+        <div className={`${alignmentClasses[align]} ${className}`}>
             {children}
         </div>
     );

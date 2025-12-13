@@ -87,7 +87,7 @@ export default async function HomePage() {
       <main className="pb-16">
         {/* Introduction Section */}
         <Container className="min-h-screen flex flex-col justify-center pb-[15vh]">
-          <TextSection>
+          <TextSection align="center">
             <TextDefault className="typography-h3">
               How are very really good things made?
             </TextDefault>
