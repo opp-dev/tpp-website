@@ -88,9 +88,9 @@ export default async function HomePage() {
         {/* Introduction Section */}
         <Container className="min-h-screen flex flex-col justify-center pb-[15vh]">
           <TextSection align="center">
-            <TextDefault className="typography-h3">
-              How are very really good things made?
-            </TextDefault>
+            <h1 style={{ fontFamily: 'var(--font-playfair-display)', fontSize: '80px', lineHeight: '110%', fontWeight: 400, letterSpacing: '-0.48px', maxWidth: '734px' }}>
+              How are <br /> <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>really very good</span> <br /> things made?
+            </h1>
             <TextNarrow className="typography-body">
               <p>
                 The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.

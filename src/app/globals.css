@@ -114,6 +114,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-public-sans);
   --font-heading: var(--font-public-sans);
+  --font-serif: var(--font-playfair-display);
   --font-mono: var(--font-ibm-plex-mono);
 
   /* Expose typography tokens to Tailwind */

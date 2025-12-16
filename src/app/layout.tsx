@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Public_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Public_Sans, IBM_Plex_Mono, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -16,6 +16,12 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ['100', '200', '300', '400', '500', '600', '700'],
   subsets: ["latin"],
   variable: "--font-ibm-plex-mono",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
+  style: ['normal', 'italic'],
 });
 
 
@@ -35,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${publicSans.variable} ${ibmPlexMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${publicSans.variable} ${ibmPlexMono.variable} ${playfairDisplay.variable} antialiased flex flex-col min-h-screen`}
       >
         <Script
           defer
