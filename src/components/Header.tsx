@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+
 
 interface NavLink {
   href: string;
@@ -49,17 +49,7 @@ export default function Header() {
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)'
         }}
       />
-      <Link href="/">
-        <Image
-          src="/tpplogo.png"
-          alt="The Product Papers Logo"
-          width={80}
-          height={70}
-          priority
-          className="cursor-pointer"
-        />
-      </Link>
-      <nav>
+      <nav className="ml-auto">
         <ul className="flex space-x-8">
           {navLinks.map((link) => (
             <li key={link.href}>

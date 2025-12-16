@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FixedLogo from "@/components/FixedLogo";
 
 const publicSans = Public_Sans({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -46,6 +47,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <FixedLogo />
       </body>
     </html>
   );
