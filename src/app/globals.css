@@ -114,7 +114,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-public-sans);
   --font-heading: var(--font-public-sans);
-  --font-serif: var(--font-playfair-display);
+  --font-display: var(--font-playfair-display);
+  --font-serif: var(--font-charis);
   --font-mono: var(--font-ibm-plex-mono);
 
   /* Expose typography tokens to Tailwind */
@@ -152,6 +153,8 @@ body {
   font-size: var(--typography-body-size);
   line-height: var(--typography-body-line-height);
   font-weight: var(--typography-body-weight);
+  --font-display: var(--font-playfair-display);
+  --font-serif: var(--font-charis);
 }
 
 /* Base typography styles using design tokens */

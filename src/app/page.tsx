@@ -86,21 +86,19 @@ export default async function HomePage() {
     <div className="font-sans min-h-screen bg-white">
       <main className="pb-16">
         {/* Introduction Section */}
-        <Container className="min-h-screen flex flex-col justify-center pb-[15vh]">
-          <TextSection align="center">
-            <h1 style={{ fontFamily: 'var(--font-playfair-display)', fontSize: '80px', lineHeight: '110%', fontWeight: 400, letterSpacing: '-0.48px', maxWidth: '734px' }}>
-              How are <br /> <span style={{ fontWeight: 'bold', fontStyle: 'italic' }}>really very good</span> <br /> things made?
-            </h1>
-            <TextNarrow className="typography-body">
-              <p>
-                The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
-              </p>
-              <p>
-                Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
-              </p>
-            </TextNarrow>
-          </TextSection>
-        </Container>
+        <div className="max-w-[1280px] px-20 screen:px-32 pt-[120px] pb-20">
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '68px', lineHeight: '110%', fontWeight: 500, letterSpacing: '-0.48px', maxWidth: '734px' }}>
+            How are <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>really very good</span> <br /> things made?
+          </h1>
+          <div className="max-w-[680px] font-serif">
+            <p className="mt-12" style={{ fontSize: '21px', lineHeight: '150%' }}>
+              The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
+            </p>
+            <p className="mt-5" style={{ fontSize: '21px', lineHeight: '150%' }}>
+              Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
+            </p>
+          </div>
+        </div>
 
         <div className="mx-auto px-6 mb-20 lg:mb-40" style={{ maxWidth: '1280px' }}>
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-[240px]">
