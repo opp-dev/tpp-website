@@ -83,57 +83,55 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="font-sans min-h-screen bg-white">
-      <main className="pb-16">
-        {/* Introduction Section */}
-        <div className="pt-[120px] pb-20">
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '68px', lineHeight: '110%', fontWeight: 500, letterSpacing: '-0.48px', maxWidth: '734px' }}>
-            How are <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>really very good</span> <br /> things made?
-          </h1>
-          <div className="max-w-[680px] font-serif">
-            <p className="mt-12" style={{ fontSize: '21px', lineHeight: '150%' }}>
-              The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
-            </p>
-            <p className="mt-5" style={{ fontSize: '21px', lineHeight: '150%' }}>
-              Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
-            </p>
-          </div>
+    <>
+      {/* Introduction Section */}
+      <div className="pt-[120px] pb-20">
+        <h1 className="!text-[48px] mobile:!text-[68px] !leading-[110%] !tracking-[-1px] mobile:!tracking-[-2px] font-medium max-w-[734px]" style={{ fontFamily: 'var(--font-display)' }}>
+          How are <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>really very good</span> <br /> things made?
+        </h1>
+        <div className="max-w-[396px] mobile:max-w-[680px] font-serif">
+          <p className="mt-12 !text-[18px] mobile:!text-[21px] !leading-[150%]">
+            The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
+          </p>
+          <p className="mt-5 !text-[18px] mobile:!text-[21px] !leading-[150%]">
+            Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
+          </p>
         </div>
+      </div>
 
-        <div className="mb-20 lg:mb-40">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-[240px]">
-            {/* Left Column - Title */}
-            <div className="flex-shrink-0">
-              <h3 className="typography-h3 font-medium">Latest Explorations</h3>
-            </div>
+      <div className="mb-20 lg:mb-40">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-[240px]">
+          {/* Left Column - Title */}
+          <div className="flex-shrink-0">
+            <h3 className="typography-h3 font-medium">Latest Explorations</h3>
+          </div>
 
-            {/* Right Column - Articles */}
-            <div className="flex-1">
-              <div className="space-y-8">
-                {posts.slice(0, 5).map((post) => (
-                  <div key={post._id} className="border-b border-gray-100 pb-8 last:border-0">
-                    <HomePagePostCard post={post} />
-                  </div>
-                ))}
-              </div>
+          {/* Right Column - Articles */}
+          <div className="flex-1">
+            <div className="space-y-8">
+              {posts.slice(0, 5).map((post) => (
+                <div key={post._id} className="border-b border-gray-100 pb-8 last:border-0">
+                  <HomePagePostCard post={post} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Contact Section */}
-        <div className="mb-20">
-          <TextSection>
-            <TextDefault className="typography-h3">
-              Moin Moin!
-            </TextDefault>
-            <TextNarrow className="typography-body">
-              <p>
-                Are you trying to make something really very good and need a hand? Or you have some answers or questions to contribute? Either way I would love to hear from you. Drop me a line at <EmailCopyLink email="suryanshu.rai@orbitlabs.de" /> and I will get back to you!
-              </p>
-            </TextNarrow>
-          </TextSection>
-        </div>
-      </main>
-    </div>
+      {/* Contact Section */}
+      <div className="mb-20">
+        <TextSection>
+          <TextDefault className="typography-h3">
+            Moin Moin!
+          </TextDefault>
+          <TextNarrow className="typography-body">
+            <p>
+              Are you trying to make something really very good and need a hand? Or you have some answers or questions to contribute? Either way I would love to hear from you. Drop me a line at <EmailCopyLink email="suryanshu.rai@orbitlabs.de" /> and I will get back to you!
+            </p>
+          </TextNarrow>
+        </TextSection>
+      </div>
+    </>
   );
 }
