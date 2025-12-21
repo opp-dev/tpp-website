@@ -55,13 +55,13 @@ const POSTS_QUERY = `
 `;
 
 export default async function BlogPage() {
-  const posts: Post[] = await client.fetch(POSTS_QUERY, {}, { 
+  const posts: Post[] = await client.fetch(POSTS_QUERY, {}, {
     next: { tags: ['post'], revalidate: 60 }
   });
 
   return (
     <div className="font-sans min-h-screen bg-white">
-      <main className="container mx-auto px-6 md:px-8 max-w-5xl pt-12 pb-16">
+      <main className="pt-12 pb-16">
         {posts.length === 0 ? (
           <p>No posts published yet.</p>
         ) : (

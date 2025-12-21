@@ -42,11 +42,11 @@ export default async function NowListPage() {
   });
 
   return (
-    <main className="pt-24" style={{ maxWidth: '600px', marginLeft: '22%' }}>
+    <main className="pt-24">
       {(!initialPosts || initialPosts.length === 0) && (
         <p>No updates yet. Check back soon!</p>
       )}
-      
+
       {initialPosts && initialPosts.length > 0 && (
         <NowInfiniteScroll initialPosts={initialPosts} />
       )}

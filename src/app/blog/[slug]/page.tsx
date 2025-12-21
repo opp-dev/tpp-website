@@ -125,7 +125,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="font-sans min-h-screen bg-white">
-      <main className="container mx-auto pt-32 py-12">
+      <main className="pt-32 py-12">
 
         {/* Article Header */}
         <article>

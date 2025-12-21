@@ -1,6 +1,6 @@
 export default function PrivacyPolicyPage() {
   return (
-    <main className="container mx-auto p-8 max-w-4xl">
+    <main className="py-8">
       <h1 className="typography-h3 mb-8">Datenschutzerklärung</h1>
       <p className="mb-8"><strong>Stand:</strong> 22.11.2025</p>
 

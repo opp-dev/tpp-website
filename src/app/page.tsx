@@ -86,7 +86,7 @@ export default async function HomePage() {
     <div className="font-sans min-h-screen bg-white">
       <main className="pb-16">
         {/* Introduction Section */}
-        <div className="max-w-[1280px] px-20 screen:px-32 pt-[120px] pb-20">
+        <div className="pt-[120px] pb-20">
           <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '68px', lineHeight: '110%', fontWeight: 500, letterSpacing: '-0.48px', maxWidth: '734px' }}>
             How are <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>really very good</span> <br /> things made?
           </h1>
@@ -100,7 +100,7 @@ export default async function HomePage() {
           </div>
         </div>
 
-        <div className="mx-auto px-6 mb-20 lg:mb-40" style={{ maxWidth: '1280px' }}>
+        <div className="mb-20 lg:mb-40">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-[240px]">
             {/* Left Column - Title */}
             <div className="flex-shrink-0">
@@ -121,7 +121,7 @@ export default async function HomePage() {
         </div>
 
         {/* Contact Section */}
-        <Container className="mb-20">
+        <div className="mb-20">
           <TextSection>
             <TextDefault className="typography-h3">
               Moin Moin!
@@ -132,7 +132,7 @@ export default async function HomePage() {
               </p>
             </TextNarrow>
           </TextSection>
-        </Container>
+        </div>
       </main>
     </div>
   );

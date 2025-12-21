@@ -1,17 +1,17 @@
 export default function ContactPage() {
   return (
     <div className="font-sans min-h-screen bg-white">
-      <main className="container mx-auto px-6 md:px-8 max-w-4xl pt-12 pb-16">
+      <main className="pt-12 pb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Contact</h1>
-        
+
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            Have questions about product development? Want to share your own insights? 
+            Have questions about product development? Want to share your own insights?
             I'd love to hear from you and discuss all things product.
           </p>
-          
+
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            Whether you're a seasoned product manager, an aspiring entrepreneur, or someone curious about 
+            Whether you're a seasoned product manager, an aspiring entrepreneur, or someone curious about
             the product development process, let's start a conversation.
           </p>
 
@@ -20,8 +20,8 @@ export default function ContactPage() {
             <p className="text-lg text-gray-700 mb-8">
               You can reach me via email at:
             </p>
-            <a 
-              href="mailto:contact@productpapers.com" 
+            <a
+              href="mailto:contact@productpapers.com"
               className="inline-flex items-center px-8 py-4 text-base font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md"
             >
               contact@productpapers.com

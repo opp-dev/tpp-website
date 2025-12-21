@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function Impressum() {
   return (
-    <main className="container mx-auto p-8 max-w-4xl">
+    <main className="py-8">
       <h1 className="typography-h3 mb-8">Impressum</h1>
       <div className="prose prose-lg max-w-none">
 
