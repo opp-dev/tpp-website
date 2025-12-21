@@ -97,7 +97,7 @@ export default function RootLayout({
         />
         <Header />
         <main className="flex-grow">
-          <div className="w-full max-w-[1280px] mx-auto px-5 mobile:px-8">
+          <div className="w-full max-w-[1244px] mx-auto px-6 mobile:px-4">
             {children}
           </div>
         </main>

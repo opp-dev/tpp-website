@@ -110,7 +110,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full pt-6 pb-[24px]" style={{ background: 'linear-gradient(to top, rgba(138, 221, 144, 0.3), rgba(138, 221, 144, 0))' }}>
-      <div className="px-8">
+      <div className="w-full max-w-[1244px] mx-auto px-6 mobile:px-4">
         <div className="flex justify-between max-mobile:flex-col-reverse max-mobile:gap-8">
           <div style={{ display: 'flex', gap: '80px' }}>
             {/* Legal Links Column */}
@@ -123,17 +123,6 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-
-            {/* Page Links Column */}
-            {/* <div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {pageLinks.map((link) => (
-                  <li key={link.href} style={{ lineHeight: '100%' }}>
-                    <Link href={link.href} className="link-mono">{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
           </div>
           <div style={{ maxWidth: '360px' }}>
             <p className="typography-body-sm" style={{ margin: 0 }}>

@@ -24,7 +24,7 @@ const navLinks: NavLink[] = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 pt-6 pb-4 pl-8 pr-12 flex items-center justify-between">
+    <header className="sticky top-0 z-50 pt-6 pb-4 flex justify-center">
       {/* Strong blur at top */}
       <div className="absolute inset-0 backdrop-blur-[10px] -z-10"
         style={{
@@ -49,21 +49,23 @@ export default function Header() {
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)'
         }}
       />
-      <nav className="ml-auto">
-        <ul className="flex space-x-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={link.className || "link-mono hover:underline hover:underline-offset-4 transition-all duration-200"}
-                style={link.style}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="w-full max-w-[1244px] px-6 mobile:px-4 flex items-center justify-between">
+        <nav className="ml-auto">
+          <ul className="flex space-x-8">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={link.className || "link-mono hover:underline hover:underline-offset-4 transition-all duration-200"}
+                  style={link.style}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

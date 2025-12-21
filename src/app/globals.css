@@ -134,7 +134,7 @@
   /* Breakpoints */
   --breakpoint-mobile: 500px;
   --breakpoint-tablet: 1024px;
-  --breakpoint-screen-small: 1280px;
+  --breakpoint-screen-small: 1244px;
   --breakpoint-screen: 1536px;
   --breakpoint-ultrawide: 2048px;
 }
