@@ -96,7 +96,7 @@ export default async function HomePage() {
             The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
           </p>
           <p>
-            Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
+            Here I explore if there can be a method to this or is it just pure chaos that can bring this about. Join me as I try to find some answers and try to make very really good things.
           </p>
         </TextDefault>
       </div>
