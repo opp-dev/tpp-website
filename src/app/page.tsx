@@ -5,7 +5,7 @@ import HomePagePostCard from '@/components/HomePagePostCard';
 import EmailCopyLink from '@/components/EmailCopyLink';
 import Container from '@/components/Container';
 import TextSection from '@/components/TextSection';
-import { TextDefault, TextNarrow } from '@/components/TextLayout';
+import { HeadingDefault, TextDefault, TextNarrow } from '@/components/TextLayout';
 
 interface Author {
   name: string;
@@ -85,20 +85,20 @@ export default async function HomePage() {
   return (
     <>
       {/* Introduction Section */}
-      <div className="pt-[120px] pb-20">
-        <div className="max-w-[734px]">
+      <div className="pt-[120px] pb-20 flex flex-col gap-12">
+        <HeadingDefault>
           <h1 className="typography-display">
             How are <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>really very good</span> <br /> things made?
           </h1>
-        </div>
-        <div className="max-w-[396px] mobile:max-w-[680px] mt-12 typography-body-large">
+        </HeadingDefault>
+        <TextDefault className="typography-body-large">
           <p>
             The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
           </p>
           <p>
             Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
           </p>
-        </div>
+        </TextDefault>
       </div>
 
       <div className="mb-20 lg:mb-40">
