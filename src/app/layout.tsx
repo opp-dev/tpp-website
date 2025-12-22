@@ -68,7 +68,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
+  weight: ['400', '500', '600', '700', '800', '900'],
   style: ['normal', 'italic'],
+  display: 'swap',
 });
 
 
@@ -86,9 +88,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${publicSans.variable} ${ibmPlexMono.variable} ${playfairDisplay.variable} ${charis.variable}`}>
       <body
-        className={`${publicSans.variable} ${ibmPlexMono.variable} ${playfairDisplay.variable} ${charis.variable} antialiased flex flex-col min-h-screen`}
+        className="antialiased flex flex-col min-h-screen"
       >
         <Script
           defer

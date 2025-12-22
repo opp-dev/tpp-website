@@ -18,6 +18,8 @@
   --font-family-primary: var(--font-public-sans), sans-serif;
   --font-family-heading: var(--font-public-sans), sans-serif;
   --font-family-mono: var(--font-ibm-plex-mono), monospace;
+  --font-display: var(--font-playfair-display);
+  --font-serif: var(--font-charis);
 
   /* Font Sizes */
   --font-size-xs: 12px;
@@ -54,10 +56,13 @@
   /* Semantic Typography Tokens */
 
   /* Display - For large hero text */
-  --typography-display-size: var(--font-size-6xl);
-  --typography-display-line-height: var(--line-height-tight);
-  --typography-display-weight: var(--font-weight-bold);
-  --typography-display-letter-spacing: var(--letter-spacing-tight);
+  --typography-display-size: 48px;
+  --typography-display-size-desktop: 68px;
+  --typography-display-line-height: 110%;
+  --typography-display-weight: 500;
+  --typography-display-letter-spacing: -1px;
+  --typography-display-letter-spacing-desktop: -2px;
+  --typography-display-family: var(--font-display), serif;
 
   /* H1 - Primary heading */
   --typography-h1-size: 75px;
@@ -146,6 +151,7 @@
   }
 }
 
+
 body {
   background: var(--background);
   color: var(--color-text);
@@ -153,13 +159,11 @@ body {
   font-size: var(--typography-body-size);
   line-height: var(--typography-body-line-height);
   font-weight: var(--typography-body-weight);
-  --font-display: var(--font-playfair-display);
-  --font-serif: var(--font-charis);
 }
 
 /* Base typography styles using design tokens */
 p {
-  font-family: var(--font-family-primary);
+  font-family: inherit;
   font-size: var(--typography-body-size);
   line-height: var(--typography-body-line-height);
   font-weight: var(--typography-body-weight);
@@ -205,10 +209,16 @@ h4 {
 
 /* Typography utility classes using design tokens */
 .typography-display {
-  font-size: var(--typography-display-size);
+  font-family: var(--typography-display-family);
   font-weight: var(--typography-display-weight);
   line-height: var(--typography-display-line-height);
+  font-size: var(--typography-display-size);
   letter-spacing: var(--typography-display-letter-spacing);
+
+  @media (min-width: 500px) {
+    font-size: var(--typography-display-size-desktop);
+    letter-spacing: var(--typography-display-letter-spacing-desktop);
+  }
 }
 
 .typography-h1 {
@@ -274,6 +284,26 @@ h4 {
   line-height: var(--typography-body-line-height);
   letter-spacing: var(--typography-body-letter-spacing);
   color: var(--color-text);
+}
+
+.typography-body-large,
+.typography-body-large p {
+  font-family: var(--font-charis), serif;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.typography-body-large p {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 500px) {
+
+  .typography-body-large,
+  .typography-body-large p {
+    font-size: 21px;
+  }
 }
 
 .typography-body p {

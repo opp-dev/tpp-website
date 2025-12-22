@@ -86,14 +86,16 @@ export default async function HomePage() {
     <>
       {/* Introduction Section */}
       <div className="pt-[120px] pb-20">
-        <h1 className="!text-[48px] mobile:!text-[68px] !leading-[110%] !tracking-[-1px] mobile:!tracking-[-2px] font-medium max-w-[734px]" style={{ fontFamily: 'var(--font-display)' }}>
-          How are <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>really very good</span> <br /> things made?
-        </h1>
-        <div className="max-w-[396px] mobile:max-w-[680px] font-serif">
-          <p className="mt-12 !text-[18px] mobile:!text-[21px] !leading-[150%]">
+        <div className="max-w-[734px]">
+          <h1 className="typography-display">
+            How are <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>really very good</span> <br /> things made?
+          </h1>
+        </div>
+        <div className="max-w-[396px] mobile:max-w-[680px] mt-12 typography-body-large">
+          <p>
             The problem with attempting to make exceptional things is that they have to be exceptional in so many little ways.
           </p>
-          <p className="mt-5 !text-[18px] mobile:!text-[21px] !leading-[150%]">
+          <p>
             Here I explore if there can be a method to this or is it just pure chaos that can this about. Join me as I try to find some answers and try to make very really good things.
           </p>
         </div>
