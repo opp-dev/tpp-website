@@ -5,7 +5,6 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FixedLogo from "@/components/FixedLogo";
 
 const charis = localFont({
   src: [
@@ -104,7 +103,6 @@ export default function RootLayout({
           </div>
         </main>
         <Footer />
-        <FixedLogo />
       </body>
     </html>
   );
