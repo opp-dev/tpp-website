@@ -6,7 +6,7 @@ export default function FixedLogo() {
         <Link href="/" className="fixed bottom-8 right-8 z-50 hover:opacity-80 transition-opacity">
             <Image
                 src="/tpp-logo.png"
-                alt="The Product Papers Logo"
+                alt="How to Athletic Logo"
                 width={160}
                 height={140}
                 priority

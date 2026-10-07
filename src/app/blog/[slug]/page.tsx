@@ -104,7 +104,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${post.title} | The Product Papers`,
+    title: `${post.title} | How to Athletic`,
     description: post.body?.[0]?.children?.[0]?.text || '',
   };
 }

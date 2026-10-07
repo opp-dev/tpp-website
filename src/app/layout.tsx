@@ -75,7 +75,7 @@ const playfairDisplay = Playfair_Display({
 
 
 export const metadata: Metadata = {
-  title: "The Product Papers",
+  title: "How to Athletic",
   description: "A blog about product design",
   icons: {
     icon: "/tpp-favicon.svg",

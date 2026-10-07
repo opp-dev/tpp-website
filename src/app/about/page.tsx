@@ -2,10 +2,10 @@ export default function About() {
   return (
     <div className="py-16">
       <main>
-        <h2 className="text-3xl font-bold mb-8">About The Product Papers</h2>
+        <h2 className="text-3xl font-bold mb-8">About How to Athletic</h2>
         <div className="prose prose-lg">
           <p className="mb-6">
-            Welcome to The Product Papers, your source for insights and analysis on product development,
+            Welcome to How to Athletic, your source for insights and analysis on product development,
             strategy, and innovation.
           </p>
           <p>
