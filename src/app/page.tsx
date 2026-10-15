@@ -9,7 +9,7 @@ export default async function HomePage() {
       <div className="pt-[120px] pb-20 flex flex-col gap-12">
         <HeadingDefault>
           <h1 className="typography-display">
-            How are <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>really very good</span> <br /> things made?
+            How to <br /> <span style={{ fontWeight: 900, fontStyle: 'italic' }}>athletic?</span>
           </h1>
         </HeadingDefault>
         <TextDefault className="typography-body-large">
