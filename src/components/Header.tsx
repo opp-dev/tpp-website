@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 
 interface NavLink {
@@ -50,6 +51,16 @@ export default function Header() {
         }}
       />
       <div className="w-full max-w-[1244px] px-6 mobile:px-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/whyA_logo_concept.png"
+            alt="How to Athletic"
+            width={80}
+            height={48}
+            priority
+            style={{ width: '80px', height: '48px', objectFit: 'contain' }}
+          />
+        </Link>
         <nav className="ml-auto">
           <ul className="flex space-x-8">
             {navLinks.map((link) => (
