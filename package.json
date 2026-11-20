@@ -31,5 +31,10 @@
     "@tailwindcss/oxide@4.3.5": true,
     "fsevents@2.3.3": true,
     "sharp@0.35.5": true
+  },
+  "overrides": {
+    "js-yaml": "3.15.2",
+    "smol-toml": "^1.9.1",
+    "minimatch": "^11.0.1"
   }
 }
